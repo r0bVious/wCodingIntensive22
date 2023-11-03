@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Shadows</title>
+</head>
+<body>
+    <!-- <div style="
+        height: 20px;
+        width: 20px;
+        margin: 20px;
+        background-color: black;
+        box-shadow: 0 0 0 100px red,
+            0 0 0 200px orange,
+            0 0 0 300px yellow,
+            0 0 0 400px green,
+            0 0 0 500px blue,
+            0 0 0 600px indigo,
+            0 0 0 700px violet;
+        border: 10px solid purple;
+        border-radius: 100%;"
+    > -->
+    </div>
+    <div> <!-- top level -->
+        <div style="
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: bisque;
+            box-shadow: 5px 5px 20px gray;
+            margin: 20px;
+        ">
+        </div>
+        <div style="
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: bisque;
+            box-shadow: inset 10px 10px 12px rgba(0, 0, 0, 0.3);
+            margin: 20px;
+        ">
+        </div>
+        <div style="
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: bisque;
+            box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.7);
+            margin: 20px;
+        ">
+        </div>
+    </div>
+    <div style="margin: 50 auto;"> <!-- bottom level -->
+        <div style="
+            background-color: black;
+            display: inline-block;
+            box-shadow: 0 0 0 10px black;
+            margin-top: 100px;
+            margin-left: 30px;
+            "> <!-- black boxes container -->
+            <div style="
+                display: inline-block;
+                width: 200px;
+                height: 200px;
+                background-color: black;
+                box-shadow: 0px 10px 15px rgb(60, 160, 255);
+                margin: 20px;
+            ">
+            </div>
+            <div style="
+                display: inline-block;
+                width: 200px;
+                height: 200px;
+                background-color: black;
+                box-shadow: inset 0px 0px 30px rgb(60, 160, 255);
+                margin: 20px;
+            ">
+            </div>
+        </div>
+        <div style="
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background-color: bisque;
+        box-shadow: 100px 100px 20px -20px rgba(50, 50, 50, 0.2);
+        position: relative;
+        bottom: 100px;
+        left: 100px;
+    ">
+    </div>
+</body>
+</html>
