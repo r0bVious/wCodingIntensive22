@@ -1,0 +1,106 @@
+* {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 4em;
+}
+
+h2 {
+   text-transform: uppercase;
+   color: gray;
+   text-align: center;
+   font-size: 3em;
+}
+
+hr {
+   margin-bottom: 50px;
+}
+
+.flag-container {
+   width: 800px;
+   margin: 0 auto 50px;
+   box-shadow: 5px 5px 10px 5px gray;
+}
+
+@keyframes rotation {
+   from {
+      transform: rotate(0deg);
+   }
+   50% {
+      transform: rotate(20deg);
+   }
+   to {
+      transform: rotate(0deg);
+   }
+}
+
+@keyframes rosehi {
+   from {
+      background-image: none;
+   }
+   50% {
+      background-image: url("../ex01_warm-up/rose.jpg");
+      background-position: 50% 35%;
+   }
+   to {
+      background-image: none;
+   }
+}
+
+.flag-container:hover {
+   animation-name: rotation;
+   animation-duration: 1s;
+   animation-direction: normal;
+   animation-iteration-count: 1;
+}
+
+.white-laos:hover{
+   animation-name: rosehi;
+   animation-duration: 2s;
+   animation-direction: alternate;
+   animation-iteration-count: 1;
+}
+
+/* Thai Flag */
+
+.red {
+   background-color: firebrick;
+   height: 75px;
+}
+
+.white {
+   background-color: snow;
+   height: 75px; 
+}
+
+.blue {
+   background-color: navy;
+   height: 150px; 
+}
+
+/* Laos Flag */
+
+.laos{
+   position: relative;
+}
+
+.red-laos {
+   background-color: firebrick;
+   height: 112.5px;
+}
+
+.white-laos {
+   position: absolute;
+   top: calc(50% - 100px);
+   left: calc(50% - 100px);
+   background-color: snow;
+   height: 200px;
+   width: 200px;
+   border-radius: 50%;
+}
+
+.blue-laos {
+   background-color: navy;
+   height: 112.5px;
+}

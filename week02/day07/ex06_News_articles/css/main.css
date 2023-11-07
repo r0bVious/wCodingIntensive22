@@ -1,0 +1,57 @@
+/* Fonts used: */
+/* font-family: 'Poppins', sans-serif; */
+/* font-family: "Playfair Display", serif; */
+
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: linen;
+    font-family: "Playfair Display", serif;
+}
+
+/* center the content */
+.cont {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* holds the actual content */
+.newspaper {
+    max-width: 700px;
+    position: relative;
+}
+
+/* this is sort of a placed watermark thing */
+.flyingN { 
+    position: absolute;
+    color: rgba(0, 0, 0, .05);
+    font-size: 10em;
+    top: -50px;
+    left: -25px;
+}
+
+.articles {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: .65em;
+}

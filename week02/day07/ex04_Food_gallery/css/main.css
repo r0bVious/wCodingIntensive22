@@ -1,0 +1,53 @@
+/* Font used: */
+/* font-family: 'Playfair Display', sans-serif; */
+
+/* Colors */
+/* Accent color: #07801E */
+
+* {
+    box-sizing: border-box;
+}
+
+.withtitle {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 2em;
+}
+
+.thought {
+    color: #07801E;
+}
+
+.picture {
+    width: 300px;
+    height: 250px;
+    background-size: cover;
+    border-radius: 25px;
+}
+
+.pics {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pic1 {
+    background-image: url("../assets/food1.jpg");
+    background-position: 0% 50%;
+}
+
+.pic2 {
+    background-image: url("../assets/food2.jpg");
+}
+
+.pic3 {
+    background-image: url("../assets/food3.jpg");
+    background-position: 0% 30%;
+}
+
+.pic4 {
+    background-image: url("../assets/food4.jpg");
+}

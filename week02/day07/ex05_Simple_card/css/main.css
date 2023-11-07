@@ -1,0 +1,80 @@
+/* Font used: */
+/* font-family: 'Poppins', sans-serif; */
+
+/* Colors: */
+/* Dark blueish~: #20262C */
+/* Light blueish~: #2F3740 */
+/* Light grayish~ #455260 */
+/* Font: #FFFFFF */
+/* Light font: #B1C4D9 */
+/* Accent color: #BEFF00 */
+
+/* Width of the arrow */
+/* 18px */
+
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #20262C;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cont {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 400px;
+    height: 600px;
+    background-color: #2F3740;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.img {
+    background-image: url("../assets/green-building.jpg");
+    height: 40%;
+    background-size: cover;
+    margin: 1em;
+    border-radius: 15px;
+}
+
+.tablink {
+    background-color: #455260;
+    color: #BEFF00;
+    margin: .5em 1em .5em;
+    padding: 5px;
+    width: 25%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.headline {
+    color: white;
+    font-size: 3em;
+    margin: 0 .3em 0;
+    font-weight: bold;
+    line-height: 70px;
+}
+
+.linkout {
+    color: #B1C4D9;
+    margin: 1em;
+}
+
+.arrow {
+    font-size: 18px;
+}
