@@ -1,0 +1,237 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.topnavparent {
+    padding: 0 10%;
+    border-bottom: .1em solid rgba(0, 0, 0, .1);
+    display: flex;
+    width: 100%;
+}
+
+.topnav {
+    /* border: 2px solid firebrick; */
+    margin-left: 1.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.toptop {
+    /* border: 2px solid yellowgreen; */
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.toptopleft {
+    display: flex;
+    gap: 1em;
+}
+
+.toptopright {
+    display: flex;
+    gap: 1em;
+}
+
+.orderbutton {
+    background-color: #ffbc0d;
+    padding: 1em;
+    /* width: 8em; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .25em;
+}
+
+.ourmenu {
+    border-bottom: .5em solid firebrick;
+    font-weight: bold;
+}
+
+#focused {
+    margin-left: 10px;
+    fill: gray;
+}
+
+#magglass {
+    fill: gray;
+    margin-right: 5px;
+}
+
+#xhair {
+    fill: firebrick;
+    margin-right: 5px;
+}
+
+#location {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.topnavmenu-site {
+    height: 100%;
+    padding: 15px;
+    /* border: 1px solid blue; */
+    font-size: .8em;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topbottom {
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topnavmenulinks {
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid blue; */
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+.burger-p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 0.2em;
+    padding: 0;
+    margin: 0;
+    width: 75%;
+    text-align: center;
+}
+
+.nav-p {
+    font-size: 1.2em;
+}
+
+.withsidenav {
+    /* border: 3px solid pink; */
+    padding: 0 10%;
+    margin-top: 5%;
+    display: flex;
+}
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.sidenavitembox {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 3px;
+}
+
+.topnavitem {
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 3px;
+}
+
+.sidenavitem {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: .8em;
+}
+
+.sidefocus {
+    border-left: .5em solid firebrick;
+    font-weight: bold;
+}
+
+.navpic {
+    width: 25%;
+}
+
+.bigburgerbox {
+    width: 100%;
+    /* border: 4px solid red; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.burgerbox {
+    width: 100%;
+    /* border: 4px solid green; */
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.burgerpic {
+    height: 60%
+}
+
+.bs_at_the_end {
+    font-size: .8em;
+    color: gray;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.cards {
+    /* border: 3px solid peru; */
+    padding: 5em 10em;
+    display: flex;
+    justify-content: space-around;
+    gap: 2em;
+}
+
+.card {
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: .25em;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardinfo {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 1em 1em 1em;
+}
+
+.cardtext {
+    padding-bottom: 1em;
+}
+
+.cardbutton {
+    max-width: 75%;
+}
