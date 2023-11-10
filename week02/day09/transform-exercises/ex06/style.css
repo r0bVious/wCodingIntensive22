@@ -34,3 +34,18 @@ h2 {
 }
 
 /* YOUR CODE */
+.users {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   align-items: center;
+}
+
+.users img {
+   max-width: 400px;
+}
+
+.users img:hover {
+   transform: scale(120%);
+   transition: all .3s;
+}

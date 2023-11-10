@@ -30,7 +30,21 @@ h2 {
 
 .container {
    height: 100vh;
-   padding: 10em 2em;
+   padding: 2em 2em;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 /* YOUR CODE */
+
+.square {
+   border: 3px solid pink;
+   height: 100px;
+   width: 100px;
+}
+
+.square:hover {
+   transform: translate(50%, 50%) rotate(25deg) scale(80%);
+   transition: all 0.4s;
+}
