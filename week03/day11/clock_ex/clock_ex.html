@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise Clock</title>
+
+    <style>
+        body {
+            overflow: hidden;
+
+        }
+
+        .container {
+            height: 100vh;
+            position: relative;
+            transform: rotate(-0.25turn);
+        }
+
+        .clock {
+            border: 1px solid;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .clockface { /* This is only for Rose's appearance */
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            position: absolute;
+            left: calc(50% - 250px);
+            top: calc(50% - 242px);
+            background: url(../../../week02/day07/ex01_warm-up/rose.jpg);
+            background-size: 300%;
+            background-position: 50% 30%;
+            opacity: 0;
+            animation: 5s linear alternate infinite heyrose;
+        }
+
+        .minutes {
+            position: relative;
+            left: 50%;
+            margin-left: 0;
+            background-color: red;
+            height: 3px;
+            top: 45%;
+            width: 50%;
+            transform-origin: top left;
+            animation: 3600s linear infinite spin;
+        }
+
+        .hours {
+            position: relative;
+            background-color: blue;
+            height: 5px;
+            left: 50%;
+            margin-left: 0%;
+            top: 48%;
+            width: 30%;
+            transform-origin: top left;
+            animation: 43200s linear infinite spin;
+        }
+
+        .seconds {
+            position: relative;
+            left: 50%;
+            margin-left: 0px;
+            height: 1px;
+            background-color: yellowgreen;
+            top: 43%;
+            width: 50%;
+            transform-origin: top left;
+            animation: 60s linear infinite spin;
+        }
+    
+        @keyframes spin {
+            to {
+                rotate: 360deg;
+            }
+        }
+
+        @keyframes heyrose {
+            0% {
+                opacity: 0;
+            }
+            95% {
+                transform: rotate(0);
+                background-size: 300%;
+            }
+            100% {
+                transform: rotate(-5deg);
+                opacity: 0.5;
+                background-size: 325%;
+            }
+        }
+
+        /* body:hover .clock * {
+            transition: all 43200s;
+            transition-timing-function: linear;
+        }
+
+        body:hover .seconds {
+            transform: rotate(259200deg);
+            transition-timing-function: steps(43200);
+        }
+
+        body:hover .minutes {
+            transform: rotate(4320deg);
+        }
+
+        body:hover .hours {
+            transform: rotate(360deg);
+        } */
+
+        body:hover .clockface {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock">
+            <hr class="hours" />
+            <hr class="minutes" />
+            <hr class="seconds" />
+        </div>
+    </div>
+    <div class="clockface"></div>
+</body>
+
+</html>

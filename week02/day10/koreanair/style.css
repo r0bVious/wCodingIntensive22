@@ -81,11 +81,12 @@ main {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     background-color: slategray;
+    justify-content: space-between;
 }
 
 .formListItem {
-    padding: 1em;
-    font-size: 6em;
+    padding: 1.5em;
+    font-size: 5em;
     text-align: center;
     background-color: slategray;
     color: #fff;
@@ -278,10 +279,6 @@ input {
         width: 25%;
         padding: 0 65px;
         padding: 0 2.5em;
-    }
-
-    .fromTo {
-
     }
 
     .bigScreenLabel {
