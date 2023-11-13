@@ -1,0 +1,69 @@
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+    font-size: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+
+body {
+    background-color: bisque;
+}
+
+.overheadNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+    background-color: powderblue;
+}
+
+.pre-logo-svg {
+    margin-left: 3em;
+    height: 6em;
+    width: 6em;
+}
+
+.navMenu {
+    display: flex;
+    justify-content: space-between;;
+    border: 2px solid yellow;
+    width: 80%;
+    height: 100%;
+}
+
+.logoZone {
+    border: 2px solid green;
+    width: 20%;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    height: 100%;
+    border: 2px solid blue;
+}
+
+li {
+    padding: 1em;
+    font-size: 1.8em;
+    gap: 1em;
+    background-color: green;
+}
+
+.navButtons {
+    border: 2px solid orange;
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2em;
+}

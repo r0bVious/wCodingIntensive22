@@ -1,0 +1,300 @@
+html {
+    box-sizing: border-box;
+    background-color: powderblue;
+    background: url(bgimage.jpg);
+    background-size: 400%;
+}
+
+* {
+    box-sizing: inherit;
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topNav {
+    background-color: #FFF;
+    height: 8vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topCenterNavforDesktop {
+    font-size: 10em;
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    margin-right: 7em;
+}
+
+.topRightNavforDesktop {
+    position: absolute;
+    right: 0;
+    height: 8vh;
+    font-size: 5em;
+    width: 30%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.topRightNavforDesktop * {
+    margin: 0 10px;
+}
+
+.logo {
+    background: url(logo.png);
+    background-size: 100%;
+    background-position: 10% 50%;
+    width: 125px;
+    margin-left: 8em;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.daBurger {
+    height: 100%;
+}
+
+main {
+    margin-top: 5em;
+    padding-bottom: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    border-radius: 15px;
+}
+
+.formList {
+    width: 100%;
+    display: flex;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: slategray;
+}
+
+.formListItem {
+    padding: 1em;
+    font-size: 6em;
+    text-align: center;
+    background-color: slategray;
+    color: #fff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+form {
+    background-color: #fff;
+    width: 100%;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 7em;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.fakeToggle {
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+    width: 90%;
+    color: #767676;
+    background-color: #fff;
+}
+
+.blueButton, .whiteButton, .searchButton {
+    border: none;
+    border-radius: 15px;
+    padding: 1em;
+    font-weight: 700;
+    color: #fff;
+}
+
+.whiteButton {
+    background-color: #FFF;
+}
+
+.departure-field, .passenger-field, .cabin-field {
+    width: 100%;
+}
+
+.blueButton {
+    background-color: #00256c;
+    width: 30%;
+}
+
+.whiteButton {
+    color: #00256c;
+    width: 70%;
+}
+
+.from-to-zone {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fromTo {
+    border: none;
+    color: black;
+    font-size: 2em;
+    background-color: transparent;
+    font-weight: bolder;
+}
+
+.searchButton {
+    background-color: #00256c;
+    width: 100%;
+    margin: 1em;
+}
+
+.label {
+    color: #767676;
+    font-size: .5em;
+}
+
+.bigScreenLabel {
+    display: none;
+}
+
+.buttonLabel {
+    color: #767676;
+}
+
+.tripDirection {
+    font-size: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+    justify-content: center;
+}
+
+.tripDirection a {
+    padding: 0 .5em;
+}
+
+.dateChooser {
+    margin-top: .5em;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 5px;
+    font-size: .8em;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-bottom: 1px solid #767676;
+}
+
+.form-inputs {
+    width: 100%;
+}
+
+p.label {
+    align-self: flex-start;
+    padding: 10px 0;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid #767676;
+}
+
+@media only screen and (min-width: 1060px) {
+/* Maybe add the skypass img? */
+
+    .topCenterNavforDesktop {
+        font-size: 7em;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 30%;
+    }
+
+    .topRightNavforDesktop {
+        font-size: 5em;
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .topNavItemsforDesktop {
+        font-weight: bold;
+    }
+
+    .daBurger {
+        display: none;
+    }
+
+    form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 1em 0;
+    }
+
+    main {
+        margin-top: 10vh;
+        width: 95vw;
+    }
+
+    .formList {
+        background-color: transparent;
+        justify-content: space-between;
+        gap: 2px;
+    }
+
+    .formListItem {
+        font-size: 7em;
+        padding: .8em;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .fakeToggle {
+        width: 25%;
+    }
+
+    .tripDirection {
+        width: 60%;
+        justify-content: flex-start;
+    }
+
+    .from-to-zone {
+        width: 25%;
+        padding: 0 65px;
+        padding: 0 2.5em;
+    }
+
+    .fromTo {
+
+    }
+
+    .bigScreenLabel {
+        display: inline;
+    }
+    
+    .departure-field, .passenger-field, .cabin-field {
+        width: 20%;
+        padding: 10px;
+    }
+
+    .searchButton {
+        width: 10%;
+    }
+
+}
