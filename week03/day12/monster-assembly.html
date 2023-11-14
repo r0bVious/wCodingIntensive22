@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rawr</title>
+    <style>
+
+        body {
+            height: 100vh;
+            background-color: papayawhip;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            position: absolute;
+        }
+
+        .bugdude {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            animation: .5s alternate infinite boing;
+        }
+
+        /* center dat thang */
+        .body {
+            top: calc(50% - calc(322px * 0.5));
+            left: calc(50% - calc(402px * 0.5));
+        }
+
+        .shutyomouth {
+            position: absolute;
+            top: 200px;
+            left: 90px;
+            width: 206px;
+            height: 147px;
+            opacity: 1;
+            border: 2px solid red;
+            animation: .5s ease-in alternate infinite chomp;
+        }
+
+        /* .mouthwrapper {
+            width: 210px;
+            height: 210px;
+            border-radius: 100%;
+            border: 2px solid red;
+        }
+
+        .mouthdiv {
+            position: absolute;
+            width: 206px;
+            height: 147px;
+            top: 200px;
+            left: 90px;
+            background-image: url(monster-pics/img/mouth.png);
+        }
+
+        .nomouthdiv {
+            position: absolute;
+            width: 206px;
+            height: 147px;
+            top: 200px;
+            left: 90px;
+            -webkit-mask-image: none;
+        } */
+
+        .mouth {
+            top: 200px;
+            left: 90px;
+        }
+
+        .blush1 {
+            top: 185px;
+            left: 75px;
+        }
+
+        .blush2 {
+            top: 185px;
+            left: 270px;   
+        }
+
+        .eye1 {
+            top: 165px;
+            left: 85px; 
+        }
+
+        .eye2 {
+            top: 165px;
+            left: 270px;
+            transform: rotate(180deg);
+        }
+
+        .lhorn {
+            top: 50px;
+            left: 40px;
+            z-index: -1;
+            animation: .5s ease-in alternate infinite lslide;
+            transform-origin: bottom;
+        }
+
+        .rhorn {
+            top: 60px;
+            right: 150px;
+            z-index: -1;
+            animation: .5s ease-in alternate infinite rslide;
+            transform-origin: bottom;
+        }
+
+        .tailplates {
+            top: 250px;
+            right: 71px;
+            animation: .5s ease-in alternate infinite tailbomp;
+            z-index: -1;
+        }
+    
+        .fire {
+            top: 175px;
+            left: 160px;
+            z-index: 1000;
+            transform: scale(50%);
+            animation: 1s ease-in infinite fireitup;
+        }
+
+        .loading {
+            width: 400px;
+            height: 25px;
+            border-radius: 15px;
+            background: linear-gradient(45deg, orange 0% 50%, lightgray 50% 100%);
+            background-size: 400%;
+            background-position-x: -70em;
+            animation: 1s linear infinite loadme;
+        }
+
+        .shadow {
+            position: absolute;
+            bottom: 50px;
+            left: 100px;
+            width: 300px;
+            height: 100px;
+            background-color: rgba(68, 68, 68, .25);
+            border-radius: 100%;
+            z-index: -1;
+        }
+
+        @keyframes boing {
+            to {
+                transform: scale(110%);
+            }
+        }
+
+        @keyframes lslide {
+            to {
+                transform: translate(10px, 5px) rotate(10deg);
+            }
+        }
+        @keyframes rslide {
+            to {
+                transform: translate(-10px, -5px) rotate(-10deg);
+            }
+        }
+
+        @keyframes tailbomp {
+            to {
+                transform: scaleY(115%);
+            }            
+        }
+
+        @keyframes fireitup {
+            from {
+                opacity: 1;
+                transform: scale(50%)
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-200px) scale(150%);
+            }
+        }
+
+        @keyframes loadme {
+            to {
+              background-position-x: 1em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bugdude">
+        <img class="body" src="monster-pics/img/body.png" />
+        <img class="blush1" src="monster-pics/img/blush.png" />
+        <img class="blush2" src="monster-pics/img/blush.png" />
+        <img class="eye1" src="monster-pics/img/eye.png" />
+        <img class="eye2" src="monster-pics/img/eye.png" />
+        <img class="fire" src="monster-pics/img/fire.png" />
+        <img class="lhorn" src="monster-pics/img/horn-left.png" />
+        <img class="rhorn" src="monster-pics/img/horn-right.png" />
+        <div class="mouthwrapper">
+            <!-- <div class="nomouthdiv"></div>
+            <div class="mouthdiv"></div> -->
+            <img src="" />
+            <img class="mouth" src="monster-pics/img/mouth.png" />
+        </div>
+        <img class="tailplates" src="monster-pics/img/tail-sting.png" />
+        <div class="shadow"></div>
+    </div>
+    <div class="loading"></div>
+</body>
+</html>

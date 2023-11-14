@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kid Cudi</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            background-color:black;
+            animation: 15s linear infinite kidcudi;
+        }
+
+        .stars {
+            width: 100vw;
+            height: 100vh;
+            background-image:   
+            radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+            radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+            radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+            radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+            background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+            animation: 15s linear infinite fadeout;
+            z-index: 20;
+        }
+
+        .celestial-box {
+            position: absolute;
+            top: 50%;
+            width: 75vw;
+            height: 200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: 15s linear infinite thefinalfrontier;
+            z-index: 25;
+        }
+
+        .sun {
+            background-color: yellow;
+            height: 200px;
+            width: 200px;
+            border-radius: 100%;
+            outline: 1000rem dashed rgba(255, 200, 0, 0.2);
+            animation: 15s linear infinite sunbeams;
+        }
+
+        .moon {
+            margin-right: 1em;
+            background-color: gray;
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+            box-shadow: 0 0 0px 0px white;
+            animation: 15s linear infinite moonglow;
+        }
+
+        svg {
+            position: absolute;
+            bottom: 0;
+            z-index: 100;
+            width: 100vw;
+        }
+
+        /* .cloudbox {
+            position: relative;
+            width: 300px;
+            height: 150px;
+        }
+
+        .cloudbox * {
+            position: absolute;
+            border-radius: 100%;
+            background-color: linen;
+        }
+
+        .cloudcircle-1 {
+            top: 50px;
+            width: 75px;
+            height: 75px;
+        }
+
+        .cloudcircle-2 {
+            left: 25px;
+            width: 125px;
+            height: 125px;
+        }
+
+        .cloudcircle-3 {
+            top: 25px;
+            left: 100px;
+            width: 100px;
+            height: 100px;
+        } */
+
+        @keyframes sunbeams {
+            0% {
+                outline: 1000rem dashed rgba(255, 200, 0, 0.2);
+            }
+            50% {
+                outline: 1000rem dashed rgba(255, 200, 0, 0.2);          
+            }
+            65% {
+                outline: 1000rem dashed rgba(255, 200, 0, 0.0);
+            }
+            90% {
+                outline: 1000rem dashed rgba(255, 200, 0, 0.0);      
+            }
+            95% {
+                outline: 1000rem dashed rgba(255, 200, 0, 0.2);           
+            }
+            100% {
+                outline: 1000rem dashed rgba(255, 200, 0, 0.2);      
+            }
+        }
+
+        @keyframes moonglow {
+            0% {
+                box-shadow: 0 0 0px 0px white;
+            }
+            60% {
+                box-shadow: 0 0 0px 0px white;         
+            }
+            70% {
+                box-shadow: 0 0 50px 10px white;
+            }
+            80% {
+                box-shadow: 0 0 50px 10px white;  
+            }
+            85% {
+                box-shadow: 0 0 0px 0px white;      
+            }
+            100% {
+                box-shadow: 0 0 0px 0px white;   
+            }
+        }
+
+        @keyframes thefinalfrontier {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes kidcudi {
+            0% {
+                background-color: skyblue;
+            }
+            50% {
+                background-color: skyblue;
+            }
+            55% {
+                background-color: orangered;               
+            }
+            65% {
+                background-color: midnightblue;
+            }
+            85% {
+                background-color: midnightblue;
+            }
+            90% {
+                background-color: orangered;               
+            }
+            100% {
+                background-color: skyblue;
+            }
+        }
+
+        @keyframes fadeout {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0;
+            }
+            70% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div class="cloudbox">
+        <div class="cloudcircle-1"></div>
+        <div class="cloudcircle-2"></div>
+        <div class="cloudcircle-3"></div>
+    </div> -->
+    <div class="stars"></div>
+        <svg id="wave" viewBox="0 0 1440 180">
+            <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
+                <stop stop-color="green" offset="0%"></stop>
+                <stop stop-color="yellowgreen" offset="100%"></stop>
+            </linearGradient>
+            <path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,54L48,54C96,54,192,54,288,60C384,66,480,78,576,96C672,114,768,138,864,123C960,108,1056,54,1152,36C1248,18,1344,36,1440,60C1536,84,1632,114,1728,123C1824,132,1920,120,2016,111C2112,102,2208,96,2304,81C2400,66,2496,42,2592,48C2688,54,2784,90,2880,108C2976,126,3072,126,3168,105C3264,84,3360,42,3456,24C3552,6,3648,12,3744,15C3840,18,3936,18,4032,27C4128,36,4224,54,4320,63C4416,72,4512,72,4608,69C4704,66,4800,60,4896,57C4992,54,5088,54,5184,66C5280,78,5376,102,5472,105C5568,108,5664,90,5760,84C5856,78,5952,84,6048,99C6144,114,6240,138,6336,147C6432,156,6528,150,6624,123C6720,96,6816,48,6864,24L6912,0L6912,180L6864,180C6816,180,6720,180,6624,180C6528,180,6432,180,6336,180C6240,180,6144,180,6048,180C5952,180,5856,180,5760,180C5664,180,5568,180,5472,180C5376,180,5280,180,5184,180C5088,180,4992,180,4896,180C4800,180,4704,180,4608,180C4512,180,4416,180,4320,180C4224,180,4128,180,4032,180C3936,180,3840,180,3744,180C3648,180,3552,180,3456,180C3360,180,3264,180,3168,180C3072,180,2976,180,2880,180C2784,180,2688,180,2592,180C2496,180,2400,180,2304,180C2208,180,2112,180,2016,180C1920,180,1824,180,1728,180C1632,180,1536,180,1440,180C1344,180,1248,180,1152,180C1056,180,960,180,864,180C768,180,672,180,576,180C480,180,384,180,288,180C192,180,96,180,48,180L0,180Z">
+            </path>
+        </svg>
+        <div class="celestial-box">
+            <div class="sun"></div>
+            <div class="moon"></div>
+        </div>
+    </div>
+</body>
+</html>

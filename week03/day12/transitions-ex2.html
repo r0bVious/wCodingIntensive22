@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 1</title>
+
+    <style>
+        .container {
+            width: 80%;
+            margin: 100px auto;
+            padding-bottom: 50px;
+            border-bottom: 1px solid gray;
+        }
+
+        .container:last-of-type {
+            padding-bottom: 170px;
+        }
+
+        .text {
+            font-size: 30px;
+        }
+
+        div:nth-of-type(2) .text  {
+            position: absolute;
+            right: -15em;
+            animation: 5s linear infinite markey;
+        }
+
+        @keyframes markey {
+            to {
+                transform: translateX(-35em);
+            }
+            
+        }
+
+        .square {
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            background: linear-gradient(130deg, red,
+            orange,
+            yellow,
+            green,
+            blue,
+            purple,
+            violet);
+            background-size: 200%;
+            border-top-left-radius: 35%;
+            border-bottom-right-radius: 35%;
+            animation: 2s ease-in-out alternate infinite fabulous;
+        }
+
+        @keyframes fabulous {
+            0%{
+                background-position:100% 0%;
+            }
+            50%{
+                background-position:100% 100%;
+            }
+            00%{
+                background-position:0% 100%;
+                border-top-right-radius: 35%;
+                border-bottom-left-radius: 35%;
+                border-top-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+
+        .basketball {
+            position: absolute;
+            width: 100px;
+            animation: 6s linear infinite heshoots;
+        }
+
+        .basketball-net {
+            width: 200px;
+            float: right;
+        }
+
+        
+        @keyframes hedribbles {
+            to {
+                transform: translate(0px, 70px)
+            }
+        }
+
+        @keyframes heshoots {
+            5% {
+                transform: translate(0, 0);
+            }
+            10% {
+                transform: translate(0, 70px);
+            }
+            15% {
+                transform: translate(0, 0);
+            }
+            20% {
+                transform: translate(0, 70px);
+            }
+            25% {
+                transform: translate(0, 0);
+            }
+            30% {
+                transform: translate(0, 70px);
+            }
+            35% {
+                transform: translate(0, 0);
+            }
+            40% {
+                transform: translate(25px, -40px);
+            }
+            45% {
+                transform: translate(45px, -70px);
+            }
+            50% {
+                transform: translate(100px, -100px);
+            }
+            55% {
+                transform: translate(130px, -120px);
+            }
+            60% {
+                transform: translate(165px, -150px);
+            }
+            65% {
+                transform: translate(225px, -170px);
+            }
+            70% {
+                transform: translate(300px, -150px);
+            }
+            75% {
+                transform: translate(350px, -110px);
+            }
+            80% {
+                transform: translate(375px, -80px);
+            }
+            85% {
+                transform: translate(425px, -50px);
+            }
+            90% {
+                transform: translate(425px, 70px);
+            }
+            95% {
+                transform: translate(425px, 20px);
+            }
+            100% {
+                transform: translate(425px, 60px);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- is a marquee -->
+        <div>
+            <marquee><span class="text">hello I'm a marquee!</span></marquee>
+        </div>
+
+        <!-- please make me behave the same or better than a marquee! -->
+        <div>
+            <span class="text">Make me at least as good as him!</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- I want to have all the color of the rainbow ! -->
+        <div class="square"></div>
+    </div>
+
+    <div class="container">
+        <!-- Make me bounce on the "ground" -->
+        <img class="basketball" src="https://svgsilh.com/svg/309539.svg" alt="basketball" />
+        <!-- BONUS: If you can, make me go into through net -->
+        <img class="basketball-net" src="https://svgsilh.com/svg/157846.svg" alt="basketball net" />
+    </div>
+</body>
+
+</html>
