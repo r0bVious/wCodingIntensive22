@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 2</title>
+</head>
+
+<body>
+    <h1>Exercise 2</h1>
+    <script type="text/javascript">
+      // Declare two new variables that contains numbers
+      // Create an if condition that will display the largest of the two numbers
+
+      console.log(" -- Exercise 1 -- ");
+      const a = Math.round(Math.random() * 10);
+      const b = Math.round(Math.random() * 10);
+
+      console.log("The first number is " + a + ".");
+      console.log("The second number is " + b + ".");
+
+      if (a > b) {
+        console.log(a + " is larger than " + b + ".");
+      } else if (b > a) {
+        console.log(b + " is larger than " + a + ".");
+      } else {
+        console.log("The numbers are the same.")
+      }
+      console.log(" ---------------- ");
+
+      // Declare 5 new variables that contain numbers
+      // Test and find the largest number of the 5
+
+      console.log(" -- Exercise 2 -- ");
+      const c = Math.round(Math.random() * 100);
+      const d = Math.round(Math.random() * 100);
+      const e = Math.round(Math.random() * 100);
+      const f = Math.round(Math.random() * 100);
+      const g = Math.round(Math.random() * 100);
+
+      console.log("The first number is " + c + ".");
+      console.log("The second number is " + d + ".");
+      console.log("The third number is " + e + ".");
+      console.log("The fourth number is " + f + ".");
+      console.log("The fifth number is " + g + ".");
+
+      console.log("The largest of these numbers is " + Math.max(c, d, e, f, g) + ".");
+      console.log(" ---------------- ");
+
+      // Test each of the 5 variables and display whether the number is even or odd
+
+      console.log(" -- Exercise 3 -- ");
+      const varArray = [c, d, e, f, g];
+      for (i in varArray) { // aka (let i = 0; i < varArray.length; i++)
+        if (varArray[i] % 2 === 0) {
+            console.log(varArray[i] + " is an even number.");
+        } else {
+            console.log(varArray[i] + " is an odd number.");
+        }
+      }
+      console.log(" ---------------- ");
+
+      // Test each of the 5 variables and display if a number can be divided by 5 or 8
+
+      console.log(" -- Exercise 4 -- ");
+      for (i in varArray) { // aka (let i = 0; i < varArray.length; i++)
+            if (varArray[i] % 5 === 0 || varArray[i] % 8 === 0 ) {
+                console.log(varArray[i] + " can be evenly divided by 5 or 8.");
+            } else {
+                console.log(varArray[i] + " cannot be evenly divided by 5 or 8.");
+            }
+        }
+        console.log(" ---------------- ");
+
+      // BONUS
+      // Create a variable for a number of electricity usage units in Watts.
+
+      console.log(" ---- Bonus ----- ");
+      let eWatts = parseInt(prompt("Please enter total watthours: "));
+      let eWattsPayMe;
+      let eWattsPrice = 0;
+
+      // Calculate the electricity bill for the number of Watts, following these instructions:
+      // For the first tier, the first 50 Watts the cost is 0.50/Watt
+      // For the second tier, the next 100 Watts is 0.75/Watt
+      // For the third tier, the next 100 Watts is 1.20/Watt
+      // And for the fourth tier, all the Watts above the first 250 is 1.50/Watt
+
+      if (eWatts > 250) {
+        eWattsPayMe = eWatts - 250; //How many watts spent beyond the highest tier
+        eWattsPrice = eWattsPrice + (eWattsPayMe * 1.5);
+        eWatts = eWatts - eWattsPayMe;
+        console.log("Your fourth tier payment is " + (eWattsPayMe * 1.5) + ".");
+      }
+      if (eWatts <= 250 && eWatts > 150) {
+        eWattsPayMe = eWatts - 150; //How many watts spent on the third tier
+        eWattsPrice = eWattsPrice + (eWattsPayMe * 1.2);
+        eWatts = eWatts - eWattsPayMe;
+        console.log("Your third tier payment is " + (eWattsPayMe * 1.2) + ".");
+      }
+      if (eWatts <= 150 && eWatts > 50) {
+        eWattsPayMe = eWatts - 50; //How many watts spent on the second tier
+        eWattsPrice = eWattsPrice + (eWattsPayMe * .75);
+        eWatts = eWatts - eWattsPayMe;
+        console.log("Your second tier payment is " + (eWattsPayMe * .75) + ".");
+      }
+      if (eWatts <= 50 && eWatts > 0) {
+        eWattsPayMe = eWatts //How many watts spent on the first tier
+        eWattsPrice = eWattsPrice + (eWattsPayMe * .50);
+        console.log("Your first tier payment is " + (eWattsPayMe * 0.5) + ".");
+      }
+
+      // Then add an additional 20% surcharge to the final cost
+
+      eWattsPrice = eWattsPrice * 1.2;
+
+      // Print out the final cost.
+
+      console.log("Your total price is " + eWattsPrice + " moneys.");
+      console.log(" ---------------- ");
+      // Print out each tier's contribution to the final cost, but only if it contributes to the final cost.
+
+      // Create a switch condition that will return the number of day in a given month
+      let monthName = prompt("Type a month and I'll tell you how many days: ");
+
+      switch (monthName.toLowerCase()) {
+      case "april": 
+      case "june": 
+      case "september": 
+      case "november": 
+        console.log("30");
+        break;
+        case "february": 
+            console.log("28 (or 29)");
+            break;
+        default:
+            console.log("31");  
+
+        }
+
+    // Create a switch that will do a calculation between two variable for a given operator
+
+    let inputA = parseInt(prompt("First number: "));
+    let inputOp = prompt("Choose your operation (+ - * /): ");
+    let inputB = parseInt(prompt("Second number: "));
+
+    switch (inputOp) {
+        case "+":
+            console.log(inputA + inputB);
+            break;
+        case "-":
+            console.log(inputA - inputB);
+            break;
+        case "*":
+            console.log(inputA * inputB);
+            break;
+        case "/":
+            console.log(inputA / inputB);
+            break;
+        }
+    </script>
+</body>
+
+</html>

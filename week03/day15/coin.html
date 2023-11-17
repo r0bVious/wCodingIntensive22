@@ -1,0 +1,31 @@
+<html>
+    <body>
+<script type="text/javascript">
+
+//get 0 or 1
+const numHeadsOrTails = Math.round(Math.random());
+console.log(numHeadsOrTails)
+
+//get user's choice and parseint
+const userChoice = parseInt(prompt("Guess 0 for Heads or 1 for Tails"));
+
+//establish user's answer as string
+let userChoiceWord = "Tails";
+let notUserChoiceWord = "Heads";
+if (userChoice === 0) {
+    userChoiceWord = "Heads";
+    notUserChoiceWord = "Tails"
+}
+
+//didja win?
+if (userChoice !== 0 && userChoice !== 1) {
+    console.log("Dude, choose either 0 or 1.");
+} else if (userChoice === numHeadsOrTails) {
+        console.log("You win! It was " + userChoiceWord + "!");
+    } else {
+        console.log("You lose! It was " + notUserChoiceWord + "!");
+}
+
+</script>
+</body>
+</html>
