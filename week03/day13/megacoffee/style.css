@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Roboto:wght@900&display=swap');
+
+:root {
+    --MGCyellow: #fdd000;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR','Noto Sans','sans-serif','MalgunGothic','Malgun Gothic','留묒�怨좊뵓','留묒� 怨좊뵓','�섎닎怨좊뵓','NanumGothic','Helvetica','Tahoma','Arial','Dotum','�뗭쓬','DotumChe','�뗭쓬泥�';
+}
+
+* {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100vw;
+    background-color: #FFF;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.navlogo {
+    height: 30px;
+    margin: 15px 0 0 20px;
+}
+
+.navlogowrapper {
+    width: 50%;
+}
+
+.nav-burger svg {
+    position: absolute;
+    top: 15px;
+    transform: scale(125%);
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    padding: 30px;
+    padding-top: 60px;
+    scroll-snap-align: start;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h2 {
+    font-family: 'Roboto';
+    font-size: 2.1em;
+    letter-spacing: 0px;
+    animation: 1.2s ease-in-out .2s infinite fade-in-up;
+}
+
+h4 {
+    font-weight: normal;
+    animation: 1.2s ease-in-out infinite fade-in-up;
+}
+
+
+p {
+    padding-top: 10px;
+    font-size: .7em;
+}
+
+.nav-burger {
+    height: 2px;
+    width: 22px;
+    border-radius: 100px;
+    background: #1c1c1b;
+}
+
+.splash {
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.franchising {
+    background-color: var(--MGCyellow);
+}
+
+.franchising span {
+    font-size: 50%;
+}
+
+.events-zone {
+    align-items: center;
+}
+
+.coffeeinfo {
+    justify-content: center;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    background-image: url("https://img.79plus.co.kr/megahp/manager/upload/main/20230913162951_1694590191548_EBwH28eQ9f.jpg");
+    background-size: 120%;
+    background-position: center -5px;
+}
+
+.itemgallerywrapper {
+    overflow-x: auto;
+}
+
+.itemgallery {
+    height: 45%;
+    width: 300%;
+    display: flex;
+    gap: 20px;
+}
+
+.item {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+}
+
+.videolol {
+    width: 315px;
+    height: 177px;
+    background-color: pink;
+}
+
+.btn, .btn2 {
+    background-color: var(--MGCyellow);
+    padding: 10px 15px;
+    text-decoration: none;
+    border: none;
+}
+
+.btn2 {
+    padding: 10px 63px;
+    background-color: #1c1c1b;
+    color: #fff;
+}
+
+.buttonbox {
+    width: 100%;
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.eventgallery {
+    width: 100%;
+}
+
+.event {
+    width: 100%;
+    height: 125px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 0;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.eventinfo {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: 15px
+}
+
+.footer {
+    width: 100%;
+    background-color: #212121;
+    color: #aaa;
+    font-size: 0.9em;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.yellowbar {
+    background-color: var(--MGCyellow);
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* bottom logo */
+.footermain > img {
+    max-width: 180px;
+}
+
+.footermain {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.socials li img {
+    border-radius: 100%;
+    background-color: #FFF;
+    padding: 2px;
+}
+
+.footermain ul {
+    display: flex;
+    padding: 15px;
+    gap: 15px;
+}
+
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

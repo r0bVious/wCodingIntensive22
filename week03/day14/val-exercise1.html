@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 1</title>
+</head>
+
+<body>
+    <h1>Exercise 1</h1>
+    <script type="text/javascript">
+        // Create 3 variables containing 18, 27 and 3
+        // addtions them and put the result into the exo1 variable
+
+        let a = 18;
+        let b = 27;
+        let c = 3;
+        let exo1 = a + b + c;
+
+        console.log(exo1);
+
+        // Increase the value of the variable exo1 by one
+
+        exo1 += 1;
+        console.log(exo1);
+
+        // Create 2 variable containing "Hello" and " guys"
+        // then concatenate the two string together and put the result into the exo2 variable
+
+        let x = "Hello";
+        let y = " guys";
+        let exo2 = x + y;
+
+        console.log(exo2);
+
+        // Create a new constant variable containing the number of student in the class
+        // Update the variable exo2 so it say: "Hello guys we are {number of student} in this class" and replace
+        // {number of student} by the content of the variable just declared
+
+        const noStudents = 6;
+        exo2 += " we are " + parseInt(noStudents) + " in this class";
+        
+        console.log(exo2);
+
+        // Create a constant with a value of null
+        // Try to add the variable with other datatype (number, string, boolean, etc)
+
+        // const nope = null;
+        // nope = nope + 1;
+
+        // Create new variables containing the result of these arithmetical operations:
+        // The result of the addition of 17 and 7 multiplied by 6 divided by 4 minus 2
+
+        let mathMe = (((17 + 7) * 6) / 4) - 2;
+
+        // The result of the multiplication of 13.32 and 182.11 minus 17.2 divided by 3
+
+        let mathMeAgain = ((13.32 * 182.11) - 17.2) / 3;
+
+        // The result of the first calculation divided by the second one
+
+        let mathMeMore = mathMe / mathMeAgain;
+
+        // The result of the third calculation minus 400;
+
+        let mathMeMoreAgain = mathMeMore - 400;
+
+        // The result of the last calculation should be console logged with the given message: "The result is: {result of the last calcul}"
+
+        console.log("The result is: " + mathMeMoreAgain);
+
+        // BONUS
+        // Create a if condition and display a message if the number of the variable exo1 is bigger than 10
+        // Otherwise display an other message
+
+        if (exo1 > 10) {
+            console.log("exo1 > 10");
+        } else {
+            console.log("exo1 < 10");
+        }
+
+        // Create a switch condition that will return the number of day in a given month
+
+        let monthName = prompt("Type a month and I'll tell you how many days: ");
+
+        switch (monthName) {
+            case "April": 
+            case "June": 
+            case "September": 
+            case "November": 
+                console.log("30");
+                break;
+            case "February": 
+                console.log("28 (or 29)");
+                break;
+            default:
+                console.log("31");  
+
+        }
+
+        // Create a switch that will do a calculation between two variable for a given operator
+
+        let inputA = parseInt(prompt("First number: "));
+        let inputOp = prompt("Choose your operation (+ - * /): ");
+        let inputB = parseInt(prompt("Second number: "));
+
+        switch (inputOp) {
+            case "+":
+                console.log(inputA + inputB);
+                break;
+            case "-":
+                console.log(inputA - inputB);
+                break;
+            case "*":
+                console.log(inputA * inputB);
+                break;
+            case "/":
+                console.log(inputA / inputB);
+                break;
+        }
+
+        let birthYear = parseInt(prompt("What year were you born?"));
+        let korAge = 2023 - birthYear + 1;
+        console.log("Your Korean age is " + korAge);
+
+    </script>
+</body>
+
+</html>
