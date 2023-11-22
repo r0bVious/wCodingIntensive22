@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Loops</title>
+</head>
+<body>
+    <script>
+
+        //1
+        // let nameList = "";
+        // do {
+        //     userName = prompt("What name would you like to add?");
+        //     if (userName === null) {
+        //         break;
+        //     }
+        //     nameList = nameList + "\n" + userName;
+        //     alert("Your current list is as follows:" + nameList);
+        // } while (userName !== "");
+        // alert("Your complete list of names:" + nameList);
+
+        //2
+        // const randomAnswer = Math.floor(Math.random() * 100);
+        // minVal = 1;
+        // maxVal = 100;
+        // console.log(randomAnswer);
+
+        // do {
+        //     userAnswer = parseInt(prompt("I'm thinking of a number between " + minVal + " and " + maxVal + "..."));
+        //     if (userAnswer > randomAnswer) {
+        //         alert("Too high. Try again... between " + minVal + " and " + userAnswer);
+        //         maxVal = userAnswer;
+        //     } else if (userAnswer < randomAnswer) {
+        //         alert("Too low. Try again... between " + userAnswer + " and " + maxVal);
+        //         minVal = userAnswer;
+        //     }
+        // } while (userAnswer !== randomAnswer);
+        // alert("You're right! My number was " + randomAnswer + "!");
+        
+        //3
+        let userBank = 1000;
+
+        while (true) {
+            if (userBank <= 0) { //you lose
+                alert("Go home.");
+                break;
+            }
+
+            const betBank = parseInt(prompt("Place your bets! How much will you wager? You have " + userBank + " remaining."))
+
+            if (betBank > userBank) {
+                alert("You're too broke for that!");
+                continue;
+            }
+
+            const randomResult = Math.floor(Math.random() * (36))
+
+            if (betNum === randomResult) {
+                userBank = userBank + betBank * 36;
+                alert("Jackpot! You add " + betBank * 36 + " to your bank! Your new total is: " + userBank);
+            } else if (betNum % 2 === 0 && randomResult % 2 === 0) {
+                userBank = userBank + betBank * 2;
+                alert("Both are even! Add " + betBank * 2 + " to your bank! Your new total is: " + userBank);
+            } else if (betNum % 2 !== 0 && randomResult % 2 !== 0) {
+                userBank = userBank + betBank * 2;
+                alert("Both are odd! Add " + betBank * 2 + " to your bank! Your new total is: " + userBank);
+            } else {
+                userBank = userBank - betBank;
+                alert("Oof! You lose " + betBank + "! Your new total is: " + userBank);
+            }
+
+            if (prompt("Do you want to continue playing? (y/n)") === "n" && userBank <= 0) {
+                alert("...like you had a choice.");
+                break;
+            } else if (userBank > 0) {
+                break;
+            }
+
+
+        }
+        
+
+
+        
+    </script>
+</body>
+</html>

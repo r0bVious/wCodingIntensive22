@@ -1,0 +1,84 @@
+html {
+    box-sizing: border-box;
+    width: 100vw;
+    font-size: 10px;
+    scroll-snap-type: y mandatory;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background: #444444;
+}
+
+section {
+    scroll-snap-stop: always;
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+}
+
+h1 {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 8em;
+    background: -webkit-linear-gradient(#BB22FF, #11AAFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.slideshow {
+    display: flex;
+    height: 90vh;
+    width: 300vw;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideshow-item {
+    width: 50%;
+    height: 75%;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 1em 1em 1em black;
+}
+
+.slideshow-item1, .slideshow-item2, .slideshow-item3 {
+    background-size: 250%;
+    background-position: 50% 0%;
+}
+
+.slideshow-item1 {
+    margin-left: 2em;
+    background-image: url("media/1.jpg");
+}
+
+.slideshow-item2 {
+    background-image: url("media/2.jpg");
+}
+
+.slideshow-item3 {
+    margin-right: 2em;
+    background-image: url("media/3.jpg");
+}
+
+/* You'll need to find a way to make a clip-scrollable slideshow container
+because desktop users will likely want to click and slide, given
+the natural touchscreen motion is a swipe */
+
+/*add a blur filter to the bottom, so text clears as it rolls up?
+maybe even go from a slightly smaller size to larger, like the whole
+doc is being rolled into a lens?*/
+
+/* CHECK OUT THIS COOL SCROLL DOWN - 
+https://www.allplan.com/ap_en/products/allplan-bimplus/ */

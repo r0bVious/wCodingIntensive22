@@ -1,0 +1,197 @@
+html {
+    box-sizing: border-box;
+
+}
+
+* {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 100%;
+}
+
+section {
+    position: relative;
+    height: 100vh;
+    background: #0F0F0F;
+    background-size: 200%;
+}
+
+#splash {
+    background: linear-gradient(midnightblue, #0F0F0F 35% 100%);
+}
+
+.moon {
+    position: absolute;
+
+    transform: scale(75%);
+    right: 10%;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    box-shadow: 2rem 1rem 0 0 #efffef;
+}
+
+.frog {
+    position: absolute;
+    background: linear-gradient(182deg, rgba(34,170,68, .8) 0%, rgba(10,70,30,.8) 3%, rgba(15,15,15,1) 5%);
+}
+
+.frog-head {
+    bottom: -25%;
+    left: -25%;
+    
+    width: 150vw;
+    height: 100vh;
+    
+    border-radius: 15%;
+
+}
+
+.eye {
+    top: -8%;
+    width: 26%;
+    height: 25%;
+    border-radius: 40%;
+}
+
+.left-eye {
+    left: 20%;
+}
+
+.right-eye {
+    right: 20%;
+}
+
+.tree {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(210deg, #117711 5%, #062206 45%);
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+.one {
+    bottom: 50%;
+    left: -3%;
+}
+.two {
+    bottom: 53%;
+    left: 7%;
+}
+.three {
+    bottom: 50%;
+    left: 13%;
+}
+.four {
+    bottom: 55%;
+    left: 30%;
+}
+.five {
+    bottom: 56%;
+    left: 40%;
+}
+.six {
+    height: 125px;
+    bottom: 56%;
+    left: 40%;
+}
+.five {
+    width: 125px;
+    height: 125px;
+    bottom: 55%;
+    left: 70%;
+}
+
+.pond {
+    position: absolute;
+    bottom: 0;
+    left: -150%;
+    
+    width: 500vw;
+    height: 500px;
+    border-radius: 100%;
+    background: linear-gradient(#220165 0%, #008EE6 100%);
+}
+
+.grass {
+    position: absolute;
+    bottom: 0;
+    height: 40%;
+    left: -75%;
+}
+
+@media screen and (min-width: 1060px) {
+
+    .moon {
+        right: 5%;
+    }
+
+    .frog-head {
+        border-radius: 35%;
+    }
+
+    .frog {
+        background: linear-gradient(181deg, rgba(34,170,68, .8) 0%, rgba(10,70,30, .8) 5%, rgba(15,15,15,1) 8%);
+    }
+
+    .eye {
+        top: -15%;
+        width: 15%;
+        height: 50%;
+    }
+
+    .left-eye {
+        left: 27%;
+    }
+
+    .right-eye {
+        right: 27%;
+    }
+
+    .tree {
+        width: 230px;
+        height: 230px;
+    }
+    .one {
+        bottom: 60%;
+        left: -3%;
+    }
+    .two {
+        bottom: 55%;
+        left: 7%;
+    }
+    .three {
+        bottom: 60%;
+        left: 13%;
+    }
+    .four {
+        bottom: 65%;
+        left: 30%;
+    }
+    .five {
+        bottom: 68%;
+        left: 40%;
+    }
+    .six {
+        bottom: 67%;
+        left: 40%;
+    }
+    .five {
+        bottom: 64%;
+        left: 70%;
+    }
+
+    .pond {
+        left: -25%;
+        width: 150vw;
+    }
+
+    .grass {
+        left: 0;
+        width: 100%;
+    }
+}

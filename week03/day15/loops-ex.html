@@ -70,16 +70,17 @@
     console.log(" ---- Bonus 2 ---- "); 
     
     let fibbyBoi = [0, 1];
-    let addMe = 0;
     for (let i = 0; i < 18; i++) {
-        console.log(fibbyBoi);
         fibbyBoi.push(fibbyBoi[i] + fibbyBoi[i+1]);
     }
+    console.log("Check out the first 20 numbers of the Fibonacci sequence:", fibbyBoi);
 
     // **Question 1:** Write a while loop that repeats 10 times.
 
-    for (let i = 0; i < 10; i++) {
-        console.log("My WHILE LOOP can count to", i + 1 + "!")
+    i = 0;
+    while (i < 10) {
+        i++;
+        console.log("My WHILE LOOP can count to", i + "!");
     }
 
     // **Question 2:** Write a do while loop that repeats 7 times.
@@ -92,8 +93,9 @@
 
     // **Question 3:** Write a while loop that repeats until the user enters a value via a prompt. In other words, a prompt is displayed each time the loop is executed. If the user enters something (anything!), the loop stops, and an alert displays the value entered in the prompt. If clicks Cancel or does not enter any text, the loop continues and displays the prompt again.
 
-    while (prompt("no or yes?") != "yes") {
-        continue;
+    let answer = prompt("Enter something to break this loop");
+    while (answer === "" || answer === null) {
+        answer = prompt("I said to enter something to break this loop!")
     }
 
     // **Question 4:** Write a for loop that repeats 3 times, asking the user to enter a number each time. Add the number that they enter each time into a total. At the end, alert the one of the predefined ranges that their final total falls within.
@@ -106,63 +108,66 @@
     // "The total was between [11-20]"
     // "The total was between [21-30]"
 
-    // ~~~~~~~~~~~~~~~~~~~~~~~~WHY DOES THIS NOT WORK?
-    // let addEm = 0;
-    // let totalAdd = 0;
-    // for (let i = 0; i < 3; i++) {
-    //     do {
-    //         addMe = prompt("Gimme a number between 1 and 10");
-    //         totalAdd = totalAdd + addEm;
-    //         console.log("Your number now equals " + totalAdd);
-    //     } while (i = 0);
-    //     addEm = prompt("You can add a number between 1 and 10 to this number. Choose a number to add:");
-    //     totalAdd = totalAdd + addEm;
-    // }
-    // console.log("Your total is:" + totalAdd);
-    // switch (totalAdd) {
-    //     case totalAdd > 0 && totalAdd < 11:
-    //         console.log("The total was between [1-10]")
-    //         break;
-    //     case totalAdd > 10 && totalAdd < 21:
-    //         console.log("The total was between [11-20]")
-    //         break;
-    //     case totalAdd > 20 && totalAdd < 31:
-    //         console.log("The total was between [21-30]")
-    //         break;
-    // }
+    let addEm = parseInt(prompt("Gimme a number between 1 and 10"));
+    console.log("Your number now equals " + addEm);
+    let totalAdd = addEm;
+    for (let i = 1; i < 3; i++) {
+        addEm = parseInt(prompt("You can add a number between 1 and 10 to this number. Choose a number to add:"));
+        totalAdd = totalAdd + addEm;
+    }
+    
+    console.log("Your total is: " + totalAdd);
+    switch (totalAdd) {
+        case totalAdd > 0 && totalAdd < 11:
+            console.log("The total was between [1-10]")
+            break;
+        case totalAdd > 10 && totalAdd < 21:
+            console.log("The total was between [11-20]")
+            break;
+        case totalAdd > 20 && totalAdd < 31:
+            console.log("The total was between [21-30]")
+            break;
+    }
 
     // **Question 5:** Display all the numbers divisible by 3 AND all the numbers divisible by 5, up to 1000.
     let totalDivisible = 0;
+    let divisibleNums = [];
     for (let i = 1; i < 1001; i++) {
         if (i % 3 === 0 || i % 5 === 0) {
-            console.log(i, "is divisible by either 3 or 5.");
+            divisibleNums.push(i);
             totalDivisible += 1;
         }
     }
+    console.log(divisibleNums, "are all divisible by either 3 or 5.");
 
     // **Question 6:** Using the function console.log(), display the total amount of numbers divisible by 3 OR divisible by 5 from 1 to 1000.
 
     console.log(totalDivisible, "numbers between 1 and 1000 are divisible by either 3 or 5.");
 
     // **Question 7:** Display all the numbers divisible by BOTH 3 AND 5 until 1000.
-
+    divisibleNums = [];
     for (let i = 1; i < 1001; i++) {
         if (i % 3 === 0 && i % 5 === 0) {
-            console.log(i, "is divisible by both 3 or 5.");
+            divisibleNums.push(i);
         }
     }
+    console.log(divisibleNums, "are all divisible by both 3 and 5.");
 
     // **Question 8:** Display all the prime numbers until 1000.
     // for each i, check if i divided by 0 to i is divisible cleanly, else discard
 
-    for (let i = 1; i < 1001; i++) {
-        for (let j = 1; j < i; j++) {
-            console.log(i, j);
-            if (i % j == 0) {
-                console.log(j," is a prime number");
+    
+    let primeStr = "2, ";
+    outer:
+    for (let maybePrime = 3; maybePrime < 1000; maybePrime += 2) { //this skips all even numbers entirely
+        for (let maybeDiv = 2; maybeDiv < Math.ceil(maybePrime / 2); maybeDiv++) {
+            if (maybePrime % maybeDiv === 0) {
+                continue outer;
             }
         }
+        primeStr += maybePrime + ", ";
     }
+    console.log(primeStr);
 
     </script>
 </body>
