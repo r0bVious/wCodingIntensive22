@@ -14,49 +14,64 @@
     <script type="text/javascript">
       // Create a function that says hello to the person name provided as an argument.
 
-      function greetMe(inputName) {
-        alert("Well, hello " + inputName + "!");
-      }
+      // function greetMe(inputName) {
+      //   alert("Well, hello " + inputName + "!");
+      // }
+
+      const greetMe = (inputName) => alert("Well, hello " + inputName + "!");
 
       // Create a function that will tell you if a provided year is a leap year or not.
       // A year is a leap year if it is divisible by 4 but not 100, or else is divisible by 400.
 
-      function leapYear(inputYear) {
-        if ((inputYear % 4 === 0 && inputYear % 100 !== 0) || inputYear % 400 === 0) {
-          return true;
-        } else {
-          return false;
-        }
-      }
+      // function leapYear(inputYear) {
+      //   if ((inputYear % 4 === 0 && inputYear % 100 !== 0) || inputYear % 400 === 0) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // }
+
+      const leapYear = (inputYear) => ((inputYear % 4 === 0 && inputYear % 100 !== 0) || inputYear % 400 === 0);
 
       // Create a function that will return all the vowels in an array of letters. It should return the vowels found as a new array.
       // Use the lotsOfLetters array from the provided letters.js file.
 
-      function gimmeVowels(inputArray) {
-        const vowels = "aeiou";
-        let yourVowels = [];
-        for (let i = 0; i < inputArray.length; i++) {
-          for (let j = 0; j < vowels.length; j++) {
-            if (vowels[j] === inputArray[i]) {
-              yourVowels.push(inputArray[i]);
-            }
-          }
-        }
-        return yourVowels;
-      }
+      // function gimmeVowels(inputArray) {
+      //   const vowels = "aeiou";
+      //   let yourVowels = [];
+      //   for (let i = 0; i < inputArray.length; i++) {
+      //     for (let j = 0; j < vowels.length; j++) {
+      //       if (vowels[j] === inputArray[i]) {
+      //         yourVowels.push(inputArray[i]);
+      //       }
+      //     }
+      //   }
+      //   return yourVowels;
+      // }
 
-      funky = ["q", "w", "e", "r", "t", "y", "u"];
+      const checkVowels = (letter) => (letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u" );
+      const vowelFiltered = (test) => test.filter(checkVowels);
 
       // Create a function that takes an array of people and a name and will return back the age of that person.
       // Use the lotsOfPeople array from the provided people.js file.
 
-      function howOld(inputArray, inputName) {
-        for (let i = 0; i < inputArray.length; i++) {
-          if (inputArray[i][0] === inputName) {
-            return inputArray[i][1];
-          }
+      // function howOld(inputArray, inputName) {
+      //   for (let i = 0; i < inputArray.length; i++) {
+      //     if (inputArray[i][0] === inputName) {
+      //       return inputArray[i][1];
+      //     }
+      //   }
+      // }
+
+      const testAge = (givenArray, givenName) => {
+        daAge = 0;
+        givenArray.forEach(function (zeName) {
+        if (zeName[0] === givenName) {
+          daAge = zeName[1];
         }
-      }
+      });
+      return daAge;
+    }
 
       // Create a function that take an array of people, a name, and a age and will add a new person into the lotsOfPeople array.
       // Use the lotsOfPeople array from the provided people.js file.
@@ -71,12 +86,14 @@
       // The function should update the array with each number multiplied by the multiplier parameter.
       // Ex : [2,5,1,10] with multiplier 2 should update the array to [4,10,2,20]
 
-      function multiplyArray(inputArray, inputMultiplier) {
-        for (let i = 0; i < inputArray.length; i++) {
-          inputArray[i] = inputArray[i] * inputMultiplier;
-        }
-        return inputArray;
-      }
+      // function multiplyArray(inputArray, inputMultiplier) {
+      //   for (let i = 0; i < inputArray.length; i++) {
+      //     inputArray[i] = inputArray[i] * inputMultiplier;
+      //   }
+      //   return inputArray;
+      // }
+
+      const multiplyMachine = (array, multi) => array.map(i => i * multi);
 
       // Do the previous exercise again, but this time the array passed in should not be changed by the function. Instead, return a new array.
 
@@ -93,11 +110,26 @@
       // Ex: [["Carolina", 28], ["Alex", 18], ["Georges", 31], ["Betty", 64]]
       // becomes
       // [["Alex", 18], ["Betty", 64], ["Carolina", 28], ["Georges", 31]]
+      // do age too
 
       function alphabetizeMe(inputArray) {
         inputArray.sort();
         return inputArray;
       }
+
+      function sortByAge(inputArray) {
+        newArr = [];
+        for (let ageCheck = 0; newArr.length < inputArray.length; ageCheck++) {
+          for (let i = 0; i < inputArray.length; i++) {
+            if (inputArray[i][1] === ageCheck) {
+              newArr.push(inputArray[i]);
+            }
+          }
+        }
+        return newArr;
+      }
+
+      let sortByAge2 = (anArray) => anArray.slice().sort((a, b) => a[1] - b[1]);
 
     </script>
 </body>

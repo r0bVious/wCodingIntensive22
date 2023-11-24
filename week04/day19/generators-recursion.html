@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generators and Recursion</title>
+</head>
+
+<body>
+    <pre>
+1. Create a generator that returns leap years, starting with the year 4 AD. Then use that generator to get 5 leap years, starting with the 490th leap year.
+</pre>
+<script>
+    const leapYears = function* () { // here's that generator
+        for (let numYear = 4; ; numYear += 4) {
+            if (numYear % 100 === 0 && numYear % 400 !== 0) continue;
+            yield numYear;
+        }
+    }
+
+    leapYearsIter = leapYears(); // call the generator
+    for (let i = 0; i < 489; i++) {
+        leapYearsIter.next();
+    }
+    for (let i = 0; i < 5; i++) {
+        console.log("Year:", leapYearsIter.next().value); //filter up to and display the requested years
+    }
+
+
+    const characters = function* () {
+        yield "child";
+        yield "frog";
+        yield "bear";
+        yield "weasel";
+    }
+
+    const charIter = characters();
+    
+    function restOfStory(nextAnimal) {
+        let parent = nextAnimal;
+        nextAnimal = charIter.next().value;
+        if (nextAnimal) {
+            let parentStr = "her";
+
+            if (parent === "frog") {
+                parentStr = "the frog's";
+            } else if (parentStr === "bear") {
+                parentStr = "bear's";
+            }
+
+            console.log(`so the ${parentStr}'s mother told a story about a little ${nextAnimal} who couldn't sleep,`);
+            restOfStory(nextAnimal);
+            console.log(`...and the little ${parent} fell asleep`);
+        }
+    }
+
+    let char = charIter.next().value;
+    console.log(`Once upon a time, there was a little ${char} who couldn't sleep,`);
+    restOfStory(char);
+</script>
+<pre>
+2. Create a generator that will return the following values:
+    "child"
+    "frog"
+    "bear"
+    "weasel"
+
+    Then, use a recursive function to the previous generator to create the following output:
+
+    "Once upon a time, there was a little child who couldn't sleep,
+    so her mother told a story about a little frog who couldn't sleep,
+    so the frog's mother told a story about a little bear who couldn't sleep,
+    so bear's mother told a story about a little weasel who couldn't sleep,
+    ...and the little bear fell asleep;
+    ...and the little frog fell asleep;
+    ...and the little child finally fell asleep."
+
+BONUS:
+    Create a function that will execute a binary search on the lotsOfPeople array from people.js for a given name, using recursion.
+    
+    The function should print out the checks it took to find the person and finally return their age, or "NOT FOUND" if the name does not exist in the array.
+
+    A binary search definition from Wiki (read carefully):
+    "Binary search works on sorted arrays. Binary search begins by comparing an element in the middle of the array with the target value. If the target value matches the element, its position in the array is returned. If the target value is less than the element, the search continues in the lower half of the array. If the target value is greater than the element, the search continues in the upper half of the array. By doing this, the algorithm eliminates the half in which the target value cannot lie in each iteration."
+
+    Hint: You can use "<" and ">" to compare strings (eg. "aaa" < "aab").
+<script src="people.js"></script>
+<script>
+    lotsOfPeople.sort();
+    console.log(lotsOfPeople);
+
+    let currName = "";
+    let searchingFor = "Dawson";
+    let end = lotsOfPeople.length;
+    let start = 0;
+
+    while (currName != "Dawson") {
+
+        //meh
+
+        let midPos = start + Math.floor((end - start) / 2);
+        let currPerson = lotsOfPeople[midPos];
+        let currName = currPerson[0];
+        console.log("Checking:", currName);
+        
+        if (currName < searchingFor) {
+            start = midPos + 1;
+        } else if (currName > searchingFor) {
+            end = midPos;
+        } else {
+            console.log(searchingFor, currPerson[1]);
+            break;
+        }
+    }
+
+    function searchHalf(start, end, searchingFor) { // insert recursion function here
+
+    }
+</script>
+    Example Output:
+    console.log("Dawson:", findInPeople("Dawson"));
+    > Checking: Jovan
+    > Checking: Elenor
+    > Checking: Bonita
+    > Checking: Darren
+    > Checking: Demario
+    > Checking: Dawson
+    > Dawson: 32
+
+    console.log("Madie:", findInPeople("Madie"));
+    > Checking: Jovan
+    > Checking: Paige
+    > Checking: Lyric
+    > Checking: Murray
+    > Checking: Mathilde
+    > Checking: Mariela
+    > Checking: Malcolm
+    > Checking: Madie
+    > Madie: 33
+
+    console.log("Abraham:", findInPeople("Abraham"));
+    > Checking: Jovan
+    > Checking: Elenor
+    > Checking: Bonita
+    > Checking: Arthur
+    > Checking: Alexandra
+    > Checking: Alberto
+    > Checking: Al
+    > Checking: Abraham
+    > Abraham: 36
+
+    console.log("Yadira:", findInPeople("Yadira"));
+    > Checking: Jovan
+    > Checking: Paige
+    > Checking: Savanna
+    > Checking: Tristian
+    > Checking: Vita
+    > Checking: Willis
+    > Checking: Yadira
+    > Yadira: 55
+
+    console.log("Bisque:", findInPeople("Bisque"));
+    > Checking: Jovan
+    > Checking: Elenor
+    > Checking: Bonita
+    > Checking: Arthur
+    > Checking: Bernard
+    > Checking: Blake
+    > Checking: Betsy
+    > Bisque: NOT FOUND
+    </pre>
+</body>
+
+</html>
