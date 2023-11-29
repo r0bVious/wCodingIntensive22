@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-dom-exercise3</title>
+</head>
+<body>
+<script>
+    //1 - make a line with links and bold
+    let body = document.querySelector("body");
+
+    let firstText = "The <b>World Wide Web Consortium</b>, abbreviated as acronym <b>W3C</b>, is a <a href='https://en.wikipedia.org/wiki/Standards_organization'>standards organization</a> non-profit organization responsible for promoting the compatibility of the <a href='https://en.wikipedia.org/wiki/World_Wide_Web_Consortium'>World Wide Web</a>";
+    let firstLine = document.createElement("p");
+    firstLine.innerHTML = firstText;
+
+    body.append(firstLine);
+    
+    //2 - make an UL
+    body.append("Languages based on ECMAScript:");
+    let languages = ['JavaScript', 'Node', 'Vue', 'React'];
+
+    function listMaker(inArray) {
+        let list = document.createElement("ul");
+
+        for (const i of inArray) {
+            let item = document.createElement("li");
+            item.innerHTML = i;
+            list.appendChild(item);
+        }
+
+        body.append(list);
+    }
+    listMaker(languages);
+
+    //3 - fieldset w/ legend, "image to upload:", input: file, send button
+    let fieldyBoi = document.createElement("fieldset");
+    let willSmith = document.createElement("legend");
+    willSmith.innerHTML = "Upload an image";
+    fieldyBoi.appendChild(willSmith);
+    body.append(fieldyBoi); //all this junk creates the line and legend
+
+    fieldyBoi.style.textAlign = 'center';
+    
+    let imageSpan = document.createElement("span");
+    imageSpan.innerHTML = "Image to upload:";
+    fieldyBoi.appendChild(imageSpan);
+
+    let inputButt = document.createElement("input");    
+    inputButt.type = "file";
+    fieldyBoi.appendChild(inputButt);
+
+    let submitButt = document.createElement("input");
+    submitButt.type = "submit";
+    submitButt.value = "Send";
+    submitButt.style.display = "block";
+    submitButt.style.margin = "15px auto 0";
+    fieldyBoi.appendChild(submitButt);
+
+</script>
+</body>
+</html>

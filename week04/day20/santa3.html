@@ -41,12 +41,12 @@ What is the solution to your new captcha?
         //if a matches b, then add a, if b matches c, then add c, etc
         function weirdAdd(string) {
             let finalSum = 0;
-            for (let i = 0; i < string.length; i++) {
+            for (let i = 0; i < string.length; i++) { // runs the gambit
                 if (parseInt(string[i]) === parseInt(string[i + 1])) {
                     finalSum = finalSum + parseInt(string[i]);
                 }
             }
-            if (parseInt(string[0]) === parseInt(string[string.length - 1])) {
+            if (parseInt(string[0]) === parseInt(string[string.length - 1])) { // checks the initial and final digit
                     finalSum = finalSum + parseInt(string[0]);
                 }
             return finalSum;

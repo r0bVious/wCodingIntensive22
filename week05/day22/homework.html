@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS in HTML</title>
+</head>
+<body>
+    <script src="parsing-exercise.js"></script>
+    <script>
+        // Q1: Create a new string with all occurrences of "Dursley" replaced with "BANANA"
+
+        const newText = text.replace(/Dursley/g, "BANANA"); //regex to flip all instances
+        console.log(newText);
+
+        // Q2: Count the number of paragraphs in the text.
+        // **Hint - Split the text into an array of paragraphs. Each paragraph is separated by a "\n" character.
+        // MY IDEA - couldn't we just count the number of \n in the string?
+
+        numPs = text.split("\n").length;
+        console.log(numPs);
+
+        // Q3: Count the number of occurrences of the word "Dursley"
+        // **Hint - Try splitting the string into an array
+
+        textArray = newText.split(" ");
+        let bananas = 0;
+        
+        for (i of textArray) {
+            if (i.match(/(.*?)BANANA(.*)/)) bananas++;
+        }
+
+        console.log(bananas);
+
+    </script>
+</body>
+</html>

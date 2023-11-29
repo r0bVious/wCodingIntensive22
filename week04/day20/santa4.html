@@ -35,8 +35,76 @@ How many total feet of ribbon should they order?
     </pre>
     <script src="santa4.js"></script>
     <script>
-        console.log(allPresents);
-    </script>
-</body>
+        //we need to do two things:
+        //cut string into array '\n'
+        //cut sub arrays into subsubarrays 'x'
+        //1: figure out how much paper is needed for the gift itself
+        //2: figure out the smallest side for each gift
 
-</html>
+
+        //chop up the array, then break down individual lengths to iterate across cleanly
+        let presentArray = allPresents.split("\n");
+        let formattedGifts = [];
+        for (gift of presentArray) {
+            formattedGifts.push(gift.split("x"));
+        }
+        console.log(formattedGifts); // check array results - good!
+
+        //find the smallest side and get the 2d area
+        function smallSide(inArray) {
+                inArray.sort((a, b) => a - b);
+                return(parseInt(inArray[0]) * parseInt(inArray[1]));
+            }
+
+        //find total area of gift
+        function giftArea(inArray) {
+            let width = parseInt(inArray[0]);
+            let length = parseInt(inArray[1]);
+            let height = parseInt(inArray[2]);
+            let totalArea = (2*length*width) + (2*width*height) + (2*height*length);
+
+            return totalArea;
+        }
+
+        //create running total of needed paper, process needed paper per gift + smallest side slack and return total
+        function paperCalculation(inArray){
+            let totalPaper = 0;
+            for (i = 0; i < inArray.length; i++) {
+                totalPaper = totalPaper + giftArea(inArray[i]);
+            }
+            for (i = 0; i < inArray.length; i++) {
+                totalPaper = totalPaper + smallSide(inArray[i]);
+            }   
+            return totalPaper;
+        }
+
+        //BONUS (too dumb to reconfigure previous functions for use ㅠㅠ)
+
+        //find the smallest side and add the smallest two and get perimeter (2l + 2w) per gift
+        function smallSideP(inArray) {
+                inArray.sort((a, b) => a - b);
+                return(parseInt(inArray[0])*2 + parseInt(inArray[1])*2);
+            }
+
+        // get bow ribbon length per gift
+        function bowRibbon(inArray) {
+            let ribbonLength = inArray[0]*inArray[1]*inArray[2];
+            return ribbonLength;
+        }
+
+        //get total ribbon length required according to gift size add bow size
+        function ribbonCalculation(inArray){
+            let totalRibbon = 0;
+            for (i = 0; i < inArray.length; i++) {
+                totalRibbon = totalRibbon + smallSideP(inArray[i]);
+            }
+            for (i = 0; i < inArray.length; i++) {
+                totalRibbon = totalRibbon + bowRibbon(inArray[i]);
+            }   
+            return totalRibbon;
+        }
+        
+    </script>
+    </body>
+
+    </html>
