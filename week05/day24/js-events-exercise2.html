@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <style>
+
+        html {
+            box-sizing: border-box;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: inherit;
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #0f0f0f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: fuchsia;
+        }
+        .gameboard {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            background: linear-gradient(0deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+            box-shadow: 8px 8px 5px blueviolet;
+            width: 40em;
+            height: 40em;
+            padding: 25px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 30%;
+        }
+        .cell {
+            background-color: ghostwhite;
+            width: 30%;
+            height: 100%;
+            border: 5px solid #0f0f0f;
+            font-size: 10em;
+            display: flex;
+            align-items:center;
+            justify-content: center;;
+        }
+        .nextTurnBox {
+            position: absolute;
+            top: 5%;
+            left: 10%;
+            width: 190px;
+            height: 200px;
+            background: ghostwhite;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            border: 5px solid violet;
+            box-shadow: 8px 8px 5px blueviolet;
+        }
+
+        .playLog {
+            position: absolute;
+            top: 5%;
+            right: 10%;
+            width: 190px;
+            height: 500px;
+            background: ghostwhite;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            border: 5px solid violet;
+            box-shadow: 8px 8px 5px blueviolet;
+        }
+
+        h1 {
+            font-size: 8em;
+
+        }
+
+        p, a {
+            padding-top: .75em;
+            font-family: monospace;
+            font-weight: bolder;
+            font-size: 2em;
+            text-decoration: underline;
+        }
+
+        .playLog > p {
+            font-size: 1.75em;
+        }
+
+        .turn-history a {
+            text-decoration: none;
+            font-size: 1.5em;
+            display: block;
+        }
+
+        .turn-history {
+            width: 80%;
+            height: 90%;
+        }
+
+        .turn {
+            padding: 5px;
+        }
+
+        .winner {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            position: absolute;
+            text-align: center;
+            color: ghostwhite;
+            text-shadow: 10px 10px 0 black;
+            font-size: 20em;
+            background-color: rgba(0, 0, 0, .7);
+        }
+
+        .xWin {
+            display: none;
+            justify-content: space-around;
+        }
+        .oWin {
+            display: none;
+            justify-content: space-around;
+        }
+
+        .comic-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(0deg, rgba(63,94,251,1) 0%, rgba(202,100,120,1) 100%);
+            border: 2px solid #000;
+            border-radius: 10px;
+            box-shadow: 5px 5px 0px #000;
+            transition: all 0.3s ease;
+}
+        button {
+            width: 65%;
+            height: 15%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nextTurnBox">
+        <p>next turn:</p>
+        <h1 class="nextTurn">X</h1>
+    </div>
+    <div class="gameboard">
+        <div class="row toprow">
+            <div id="a1" class="cell left"></div>
+            <div id="a2" class="cell middle"></div>
+            <div id="a3" class="cell right"></div>
+        </div>
+        <div class="row midrow">
+            <div id="b1" class="cell left"></div>
+            <div id="b2" class="cell middle"></div>
+            <div id="b3" class="cell right"></div>
+        </div>
+        <div class="row botrow">
+            <div id="c1" class="cell left"></div>
+            <div id="c2" class="cell middle"></div>
+            <div id="c3" class="cell right"></div>
+        </div>
+    </div>
+    <div class="playLog">
+        <p>turn history:</p>
+        <div class="turn-history"></div>
+    </div>
+    <div class="winner xWin">
+        <span>X's WIN</span>
+        <button class="comic-button reload">Play Again?</button>
+    </div>
+    <div class="winner oWin">
+        <span>O's WIN</span>
+        <button class="comic-button reload">Play Again?</button>
+    </div>
+
+    <script>
+        // Exercise: Tic-tac-toe Game
+        // 1. Create a tic-tac-toe game board. There is to be a 3x3 grid of boxes in HTML. You are free to manually create the HTML or use JS to create the boxes. Style appropriately to suit you with CSS.
+        // 2. Create the logic to react appropriately (X's and O's) to click events on the boxes. Clicking on an box already taken (X or O) should not do anything on that box.
+
+        //set up dem variables for easy access
+        let a1 = document.querySelector(".toprow .left"); let a2 = document.querySelector(".toprow .middle"); let a3 = document.querySelector(".toprow .right");
+        let b1 = document.querySelector(".midrow .left"); let b2 = document.querySelector(".midrow .middle"); let b3 = document.querySelector(".midrow .right");
+        let c1 = document.querySelector(".botrow .left"); let c2 = document.querySelector(".botrow .middle"); let c3 = document.querySelector(".botrow .right");
+
+        let cellGroup = document.querySelectorAll(".cell");
+        cellGroup.forEach((box) => {
+            box.addEventListener("click", enterXO);
+        // BONUS:
+        // 6. When hovering over a valid next move, the box background should turn a shade of green.
+        // When hoving over an invalid move, the box background should turn red.
+            box.addEventListener("mouseover", () => {
+                if (box.innerHTML === "") {
+                    box.style.backgroundColor = "lightgreen";
+                } else {
+                    box.style.backgroundColor = "crimson";
+                }
+            box.addEventListener("mouseout", () => {
+                box.style.backgroundColor = "";
+            });
+            })
+        });
+
+        let nextTurn = document.querySelector(".nextTurn"); //targetting div displaying next turn letter
+        let playLog = []; //running log of moves made, odd indexes are always X, evens always O
+        let playLogDisplay = document.querySelector(".turn-history"); //targetting div where logged moves display
+        let turnCount = 1; //signal for player priority (nextTurn) and for use in determining who the winner was for announcement
+        function enterXO() {
+            if (turnCount === 1) {
+                this.innerHTML = "X"; //places token
+                nextTurn.innerHTML = "O"; //displays next turn
+                playLog.push(this.getAttribute("id")); //adds move to the turn history array
+                createLog(playLog, turnCount); //creates a new line with a link to the playLog
+                turnCount++; //increments turn (odds - X, evens - O)
+            } else if (this.innerHTML === "" && turnCount % 2 == 0) {
+                this.innerHTML = "O";
+                nextTurn.innerHTML = "X";
+                playLog.push(this.getAttribute("id"));
+                createLog(playLog, turnCount);
+                turnCount++;
+            } else if (this.innerHTML === "") {
+                this.innerHTML = "X";
+                nextTurn.innerHTML = "O";
+                playLog.push(this.getAttribute("id"));
+                createLog(playLog, turnCount);
+                turnCount++;
+            }
+
+            let winTeam = "X";
+            if (turnCount % 2 === 0) {
+                winTeam = "O";
+            }
+            winnerCheck();
+            console.log(turnCount);
+            // 3. Update the interface to display the next turn (X's or O's).
+        }
+
+        let xWin = document.querySelector(".xWin");
+        let oWin = document.querySelector(".oWin");
+
+        let indexCounter = 0; //this variable for marking the movehistory divs so the timeTravel function can work
+        function createLog(historyArr, turn) {
+            if (playLogDisplay.hasChildNodes()) {
+                let indexCounter = parseInt(document.querySelector(".turn:last-child").getAttribute("id"));
+            }
+            let newLine = document.createElement("div");
+            newLine.setAttribute("class", "turn");
+            newLine.setAttribute("id", indexCounter);
+            indexCounter++;
+            newLine.innerHTML = "Turn " + (turn) + ": " + historyArr[turn - 1];
+            newLine.addEventListener("click", timeTravel); //when clicked, run timeTravel function
+            playLogDisplay.appendChild(newLine);
+        }
+
+         //run the clicked div's ID against the existing playLog array from array[0] to array[div's ID]
+         //wipe and populate gameboard according to above, odd indexes as X, evens as O
+        function timeTravel(logArray) {
+
+            //wipe board
+            cellGroup.forEach((box) => {
+                box.innerHTML = "";
+            });
+
+            //populate board via array info
+            let turnStop = this.getAttribute("id"); //this is the point in the array that we should stop populating the board
+            for (i = 0; i <= turnStop; i++) {
+                if (i % 2 !== 0) {
+                    document.getElementById(playLog[i]).innerHTML = "O"
+                }
+                if (i % 2 === 0) {
+                    document.getElementById(playLog[i]).innerHTML = "X"
+                }
+            }
+
+            //wipe playlog array and display
+            let desiredTurn = this.getAttribute("id"); //get the ID from the clicked div in log
+            playLog = playLog.slice(0, parseInt(desiredTurn) + 1); //remove latter array elements to be no longer present on the board
+
+            const allTurns = document.querySelectorAll(".turn");
+            allTurns.forEach((elem) => { // this gets rid of the displayed lines in the log up to the current boardstate
+                if (parseInt(elem.getAttribute("id")) > desiredTurn) {
+                elem.remove();
+                }
+            });
+        }
+
+        // 4. Create a function to determine winning combinations and add it to the existing logic to check for a win condition. There are many different ways to determine a win -- find one that works for you and implement it!
+        function winnerCheck() {
+            if ((a1.innerHTML === a2.innerHTML && a1.innerHTML === a3.innerHTML && a1.innerHTML !== "") ||
+            (b1.innerHTML === b2.innerHTML && b1.innerHTML === b3.innerHTML && b1.innerHTML !== "") ||
+            (c1.innerHTML === c2.innerHTML && c1.innerHTML === c3.innerHTML && c1.innerHTML !== "") ||
+            (a1.innerHTML === b1.innerHTML && a1.innerHTML === c1.innerHTML && a1.innerHTML !== "") ||
+            (a2.innerHTML === b2.innerHTML && a2.innerHTML === c2.innerHTML && a2.innerHTML !== "") ||
+            (a3.innerHTML === b3.innerHTML && a3.innerHTML === c3.innerHTML && a3.innerHTML !== "") ||
+            (a2.innerHTML === b2.innerHTML && a1.innerHTML === c3.innerHTML && a2.innerHTML !== "") ||
+            (a3.innerHTML === b2.innerHTML && a3.innerHTML === c1.innerHTML && a3.innerHTML !== "") ||
+            (a1.innerHTML === b2.innerHTML && a1.innerHTML === c3.innerHTML && a1.innerHTML !== "")) {
+                cellGroup.forEach((box) => {
+                    box.removeEventListener("click", enterXO);
+                });
+                if (turnCount % 2 === 0) {
+                    xWin.style.display = "flex";
+                } else {
+                    oWin.style.display = "flex";
+                }
+                nextTurn.innerHTML = "---";
+            }
+        }
+
+        // 5. Upon completion of a game, announce the winner and present a "Play Again" button that resets the board for another round.
+        let playAgain = document.querySelectorAll(".reload");
+        playAgain.forEach((clicker) => {
+            clicker.addEventListener("click", refreshPage);
+        });
+
+        function refreshPage(){
+            window.location.reload();
+        }
+
+
+        //movelog - create an array that populates each index with the moves made in order (i.e. if the player(s) choose a3 then b1
+        //the array will equal [a3, b1])
+        //since the moves always start with X, there's no need to keep track of player priority
+
+
+        // 7. Keep a history of all moves taken and display each point in the "move history" as a link somewhere on the UI. (Eg. Move #5) The current move state will be a link in the move history called "Current".
+        // Clicking on the link in the move list should take the gameboard back to that point in the move history.
+
+        // 8. Even while viewing a past move using the move history, the user can then play another move, which creates a new future to follow (ie, resets the move history links to follow this new move into a new future),
+        // or they can click back to any other move in the move history, including the future moves if they exist, including "Current" to get back to where they were before reviewing move history.
+
+    </script>
+</body>
+
+</html>

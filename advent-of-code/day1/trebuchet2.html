@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trebuchet 2</title>
+</head>
+<body>
+<script src="trebuchet.js"></script>
+<script>
+
+    //use indexOf() and find the lowest and highest indexes, run a for loop that holds lowest indexOf() value in variable and compares other hits to it
+    //lastindexOf() also exists
+
+    let numberStrings = [["zero", "0"], ["one", "1"], ["two", "2"], ["three", "3"], ["four", "4"], ["five", "5"], ["six", "6"], ["seven", "7"], ["eight", "8"], ["nine", "9"]];
+
+    const calibArray = calibrationInfo.split("\n"); //make an array per line of data
+
+    function getTotal (inArray) {
+        for (line of inArray) {
+            let lineValue = firstNumFinder(line) + lastNumFinder(line);
+            let calibFinal = calibFinal + parseInt(lineValue);
+            console.log(firstNumFinder(line), lastNumFinder(line));
+        }
+        return calibFinal;
+    }
+
+    function firstNumFinder(inString) {
+        let currentLowStr = ""; //something to catch the string name
+        let currentLowInd = 999; //start high for index low checking
+        for (num of numberStrings) {
+            for (wordOrDigit of num) {
+                if (inString.indexOf(wordOrDigit) !== -1 && inString.indexOf(wordOrDigit) < currentLowInd) {
+                    currentLowInd = inString.indexOf(wordOrDigit);
+                    currentLowStr = wordOrDigit;
+                }
+            }
+        }
+        if (currentLowStr === "one") {
+            return "1";
+        } else if (currentLowStr === "two") {
+            return "2";
+        } else if (currentLowStr === "three") {
+            return "3";
+        } else if (currentLowStr === "four") {
+            return "4";
+        } else if (currentLowStr === "five") {
+            return "5";
+        } else if (currentLowStr === "six") {
+            return "6";
+        } else if (currentLowStr === "seven") {
+            return "7";
+        } else if (currentLowStr === "eight") {
+            return "8";
+        } else if (currentLowStr === "nine") {
+            return "9";
+        } else {
+        return currentLowStr;
+        }
+    }
+
+    function lastNumFinder(inString) {
+        let currentHighStr = ""; //something to catch the string name
+        let currentHighInd = -1; //start low for index high checking
+        for (num of numberStrings) {
+            for (wordOrDigit of num) {
+                if (inString.lastIndexOf(wordOrDigit) !== -1 && inString.lastIndexOf(wordOrDigit) > currentHighInd) {
+                    currentHighInd = inString.lastIndexOf(wordOrDigit);
+                    currentHighStr = wordOrDigit;
+                }
+            }
+        }
+        if (currentHighStr === "one") {
+            return "1";
+        } else if (currentHighStr === "two") {
+            return "2";
+        } else if (currentHighStr === "three") {
+            return "3";
+        } else if (currentHighStr === "four") {
+            return "4";
+        } else if (currentHighStr === "five") {
+            return "5";
+        } else if (currentHighStr === "six") {
+            return "6";
+        } else if (currentHighStr === "seven") {
+            return "7";
+        } else if (currentHighStr === "eight") {
+            return "8";
+        } else if (currentHighStr === "nine") {
+            return "9";
+        } else {
+        return currentHighStr;
+        }
+    }
+</script>
+</body>
+</html>

@@ -2,7 +2,6 @@
 
 html {
     box-sizing: border-box;
-
 }
 
 * {
@@ -11,10 +10,15 @@ html {
     margin: 0;
     text-decoration: none;
     color: linen;
+    font-family: sans-serif;
 }
 
 body {
     font-size: 100%;
+}
+
+main {
+    overflow-x: hidden;
 }
 
 section {
@@ -22,11 +26,17 @@ section {
     height: 100vh;
     background: #0F0F0F;
     background-size: 200%;
+    border-bottom: 1px solid red;
 }
 
 nav {
     position: fixed;
     display: none;
+}
+
+span {
+    font-size: 0.75em;
+    font-style: italic;
 }
 
 #splash {
@@ -49,8 +59,8 @@ nav {
 .moon2 {
     height: 55px;
     width: 55px;
-    top: 23%;
-    right: 5%;
+    top: 2%;
+    right: 8%;
     box-shadow: 1rem .5rem 0 0 #efffef;
 }
 
@@ -67,7 +77,6 @@ nav {
     height: 100vh;
     
     border-radius: 15%;
-
 }
 
 .eye {
@@ -147,7 +156,7 @@ nav {
     /* animation: 2s ease-in-out alternate infinite bobbing; */
 }
 
-a {
+.main-links {
     position: absolute;
     font-family: "Press Start 2P";
 }
@@ -226,6 +235,127 @@ a {
         transform: translate(0, -10%);
     }
 }
+
+.text-header {
+    font-size: 1.2em;
+    font-family: "Press Start 2P";
+    text-shadow: 0px 0px 1px black;
+    color: #55BA55;
+    margin-bottom: .5em;
+}
+
+.about-p {
+    font-size: 1em;
+    margin-bottom: 2em;
+}
+
+#about-sec {
+    background: linear-gradient( #55BA55, #0f0f0f 75%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+
+#buy-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+h1 {
+    font-size: 4.5em;
+    font-family: "Press Start 2P";
+    text-align: center;
+    transform: rotate(-7deg);
+}
+
+.button-37 {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(34,170,68, .8) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #efffef;
+  font-family: monospace;
+  text-align: center;
+}
+
+.buybutton {
+    padding: 10px 25px;
+    width: 75%;
+    height: 30%;
+    font-size: 3em;
+    margin-top: 2em;
+}
+
+.buytext {
+    padding: 0 2em;
+    font-size: 1em;
+}
+
+#signup-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#signup-sec .text-header, #community-sec .text-header {
+    font-size: 2em;
+    padding: 0 1em;
+    text-align: center;
+}
+
+fieldset {
+    width: 80%;
+    height: 80%;
+    background: linear-gradient(#337733, #055505);
+    border-radius: 25px;
+    box-shadow: 5px 5px 2px 0 rgba(160, 220, 160, 1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1em;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+}
+
+.signup-blurb {
+    font-size: 2em;
+}
+
+.email-input {
+    height: 3em;
+    width: 80%;
+}
+
+.formbutton {
+    font-size: 1.8em;
+    width: 80%;
+    height: 10%;
+}
+
+.sns-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2em;
+}
+
+.fa {
+    padding: 50px;
+    background: red;
+    text-align: center;
+    text-decoration: none;
+  }
 
 @media screen and (min-width: 1060px) {
 

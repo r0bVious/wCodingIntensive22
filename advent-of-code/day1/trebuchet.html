@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trebuchet</title>
+</head>
+<body>
+<script src="trebuchet.js"></script>
+<script>
+
+    let calibFinal = 0;
+
+    const calibArray = calibrationInfo.split("\n"); //make an array per line
+    for (const line of calibArray) {
+        let firstNum = ""; //initialize variables to catch digits
+        let lastNum = "";
+        for (const letter of line) { //get the first appearing number
+            if (!isNaN(parseInt(letter))) {
+                firstNum = letter;
+                break;
+            }
+        }
+        let flipLine = line.split("").reverse().join("");
+        for (const letter of flipLine) { //get last appearing number
+            if (!isNaN(parseInt(letter))) {
+                lastNum = letter;
+                break;
+            }
+        }
+        finalNum = firstNum + lastNum;
+        calibFinal = calibFinal + parseInt(finalNum);
+    }
+    
+</script>
+</body>
+</html>
