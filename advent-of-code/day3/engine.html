@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engine</title>
+</head>
+<body>
+<script src="engine.js"></script>
+<script>
+    //I need to find the beginning and end of the numString
+    //I then need to find if there are symbols at the index values as such:
+    //previous line's numString's first index value - 1 to + 1
+    //same line's numString's index value -1 and + 1
+    //next line's numString's first index value -1 to +1
+    //else skip numString value
+
+    //process data into array
+    let dataArray = engine.split("\n");
+
+    //array of symbols
+    let symbolArr = ["*", "/", "+", "%", "&", "=", "-", "@", "$"];
+
+    let numTotal = 0;
+
+    // iterates across characters and finds where 3, 2, or 1 digit numbers exist
+    // for (const line of dataArray) {
+    //     for (let i = 0; i < line.length; i++) {
+    //         if (parseInt(line[i]) !== NaN && (parseInt(line[i + 1]) !== NaN) && (parseInt(line[i + 2]) !== NaN)) {
+    //             //3 digit process run (index i - 1 to i + 3)
+    //             for (symbol of symbolArr) {
+    //                 if ((line[i - 1][i - 1] === symbol || line[i - 1][i] === symbol || line[i - 1][i + 1] === symbol || line[i - 1][i + 2] === symbol || line[i - 1][i + 3] === symbol) ||
+    //                     (line[i][i - 1] === symbol || line[i][i + 1] === symbol || line[i][i + 2] === symbol || line[i][i + 3] === symbol) ||
+    //                     (line[i + 1][i - 1] === symbol || line[i + 1][i] === symbol || line[i + 1][i + 1] === symbol || line[i + 1][i + 2] === symbol || line[i + 1][i + 3] === symbol)) {
+    //                         let numString = line[i] + line[i + 1];
+    //                         numTotal = numTotal + parseInt(numString);
+    //                         continue;
+    //                     }
+    //             }
+    //         } else if (parseInt(line[i]) !== NaN && (parseInt(line[i + 1]) !== NaN)) {
+    //             //2 digit process run (index i - 1 to i + 2)
+    //             for (symbol of symbolArr) {
+    //                 if ((line[i - 1][i - 1] === symbol || line[i - 1][i] === symbol || line[i - 1][i + 1] === symbol || line[i - 1][i + 2] === symbol) ||
+    //                     (line[i][i - 1] === symbol || line[i][i + 1] === symbol || line[i][i + 2] === symbol) ||
+    //                     (line[i + 1][i - 1] === symbol || line[i + 1][i] === symbol || line[i + 1][i + 1] === symbol || line[i + 1][i + 2] === symbol)) {
+    //                         let numString = line[i] + line[i + 1];
+    //                         numTotal = numTotal + parseInt(numString);
+    //                         continue;
+    //                     }
+    //             }
+    //         } else if (parseInt(line[i]) !== NaN) {
+    //             //1 digit process run (index i - 1 to i + 1)
+    //             for (symbol of symbolArr) {
+    //                 if ((line[i - 1][i - 1] === symbol || line[i - 1][i] === symbol || line[i - 1][i + 1] === symbol) ||
+    //                     (line[i][i - 1] === symbol) || (line[i][i + 1] === symbol) ||
+    //                     (line[i + 1][i - 1] === symbol || line[i + 1][i] === symbol || line[i + 1][i + 1] === symbol)) {
+    //                         numTotal = numTotal + parseInt(line[i]);
+    //                         continue;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    // for (const line of dataArray) {
+    //     for (let i = 1; i < line.length; i++) {
+    //         if (parseInt(line[i]) !== NaN && (parseInt(line[i + 1]) !== NaN) && (parseInt(line[i + 2]) !== NaN)) {
+    //             //3 digit process run (index i - 1 to i + 3)
+    //             let testArr = [];
+    //                 testArr.push(line[i - 1][i - 1],
+    //                 line[i - 1][i],
+    //                 line[i - 1][i + 1],
+    //                 line[i - 1][i + 2],
+    //                 line[i - 1][i + 3],
+    //                 line[i][i - 1],
+    //                 line[i][i + 1],
+    //                 line[i][i + 2],
+    //                 line[i][i + 3],
+    //                 line[i + 1][i - 1],
+    //                 line[i + 1][i],
+    //                 line[i + 1][i + 1],
+    //                 line[i + 1][i + 2],
+    //                 line[i + 1][i + 3]
+    //                 )
+
+    //             for (sym in symbolArr) {
+    //                 if (testArr.indexOf(sym) !== -1){
+    //                         let numString = line[i] + line[i + 1] + line[i + 2];
+    //                         numTotal = numTotal + parseInt(numString);
+    //                         i = i + 2;
+    //                         continue;
+    //                     }
+    //             }
+    //         } else if (parseInt(line[i]) !== NaN && (parseInt(line[i + 1]) !== NaN)) {
+    //             //2 digit process run (index i - 1 to i + 2)
+    //             let testArr = [];
+    //                 testArr.push(line[i - 1][i - 1],
+    //                 line[i - 1][i],
+    //                 line[i - 1][i + 1],
+    //                 line[i - 1][i + 2],
+    //                 line[i][i - 1],
+    //                 line[i][i + 1],
+    //                 line[i][i + 2],
+    //                 line[i + 1][i - 1],
+    //                 line[i + 1][i],
+    //                 line[i + 1][i + 1],
+    //                 line[i + 1][i + 2]
+    //                 )
+
+    //             for (sym in symbolArr) {
+    //                 if (testArr.indexOf(sym) !== -1){
+    //                         let numString = line[i] + line[i + 1];
+    //                         numTotal = numTotal + parseInt(numString);
+    //                         i = i + 1;
+    //                         continue;
+    //                     }
+    //             }
+    //         } else if (parseInt(line[i]) !== NaN) {
+    //             //1 digit process run (index i - 1 to i + 1)
+    //             let testArr = [];
+    //                 testArr.push(line[i - 1][i - 1],
+    //                 line[i - 1][i],
+    //                 line[i - 1][i + 1],
+    //                 line[i][i - 1],
+    //                 line[i][i + 1],
+    //                 line[i + 1][i - 1],
+    //                 line[i + 1][i],
+    //                 line[i + 1][i + 1]
+    //                 )
+
+    //             for (sym in symbolArr) {
+    //                 if (testArr.indexOf(sym) !== -1){
+    //                         let numString = line[i];
+    //                         numTotal = numTotal + parseInt(numString);
+    //                         continue;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+</script>
+</body>
+</html>

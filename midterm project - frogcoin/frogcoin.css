@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300&family=Press+Start+2P&display=swap');
 
 html {
     box-sizing: border-box;
@@ -18,7 +18,7 @@ body {
 }
 
 main {
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 section {
@@ -26,21 +26,102 @@ section {
     height: 100vh;
     background: #0F0F0F;
     background-size: 200%;
-    border-bottom: 1px solid red;
 }
 
-nav {
-    position: fixed;
-    display: none;
+.sticky-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.to-pond {
+    position: sticky;
+    top: 0;
+    height: 25px;
+    width: 100vw;
+    background: linear-gradient(#0f0f0f, #117711);
+    z-index: 999;
+    box-shadow: 0px 2px 0 0 #0f0f0f;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navtab {
+    font-family: "Press Start 2P";
 }
 
 span {
     font-size: 0.75em;
     font-style: italic;
+    color: #439943;
 }
 
 #splash {
     background: linear-gradient(midnightblue, #0F0F0F 35% 100%);
+}
+
+.star {
+    height: 5px;
+    width: 5px;
+    background: white;
+    position: absolute;
+    animation: 5s ease-in-out alternate infinite pulse;
+}
+
+@keyframes pulse {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.star1 {
+    top: 15px;
+    left: 40px;
+    animation-delay: 1s;
+}
+.star2 {
+    top: 70px;
+    left: 70px;
+    animation-direction: alternate-reverse;
+    animation-delay: .2s;
+}
+.star3 {
+    top: 55px;
+    left: 150px;
+    animation-delay: .5s;
+}
+.star4 {
+    top: 25px;
+    left: 200px;
+    animation-direction: alternate-reverse;
+    animation-delay: .7s;
+}
+.star5 {
+    top: 100px;
+    left: 220px;
+    animation-direction: alternate-reverse;
+    animation-delay: .4s;
+}
+.star6 {
+    top: 60px;
+    left: 280px;
+    animation-delay: .3s;
+}
+.star7 {
+    display: none;
+    animation-direction: alternate-reverse;
+    animation-delay: .8s;
+}
+.star8 {
+    display: none;
+    animation-direction: alternate-reverse;
+}
+.stars {
+    position: absolute;
 }
 
 .moon {
@@ -48,27 +129,24 @@ span {
     transform: scale(75%);
     border-radius: 100%;
 }
-
 .moon1 {
     right: 10%;
     height: 100px;
     width: 100px;
     box-shadow: 2rem 1rem 0 0 #efffef;
 }
-
 .moon2 {
-    height: 55px;
-    width: 55px;
+    height: 100px;
+    width: 100px;
     top: 2%;
     right: 8%;
-    box-shadow: 1rem .5rem 0 0 #efffef;
+    box-shadow: 2rem 1rem 0 0 #efffef;
 }
 
 .frog {
     position: absolute;
     background: linear-gradient(182deg, rgba(34,170,68, .8) 0%, rgba(10,70,30,.8) 3%, rgba(15,15,15,1) 5%);
 }
-
 .frog-head {
     bottom: -25%;
     left: -25%;
@@ -78,20 +156,50 @@ span {
     
     border-radius: 15%;
 }
-
 .eye {
     top: -8%;
     width: 26%;
     height: 25%;
     border-radius: 40%;
 }
-
 .left-eye {
     left: 20%;
 }
-
 .right-eye {
     right: 20%;
+}
+
+.croak {
+    position: absolute;
+    font-size: 3em;
+    font-family: "Gaegu";
+    opacity: 0;
+    animation: 2s ease-in-out alternate-reverse infinite pulse;
+}
+.croak1 {
+    top: 10%;
+    left: 10%;
+    transform: rotate(-15deg);
+    animation-delay: .2s;
+}
+.croak2 {
+    top: 35%;
+    right: 20%;
+    transform: rotate(20deg);
+    animation-delay: 1s;
+}
+.croak3 {
+    top: 70%;
+    left: 10%;
+    transform: rotate(-21deg);
+    animation-delay: .5s;
+}
+.croak4 {
+    font-size: 1em;
+    top: 60%;
+    right: 10%;
+    transform: rotate(13deg);
+    animation-delay: 1.3s;
 }
 
 .tree {
@@ -100,38 +208,40 @@ span {
     height: 100px;
     background: linear-gradient(232deg, #AAFFAA 25%, #117711 30%, #023302 45%);
     clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    transform-origin: bottom center;
+    animation: 5s ease-in-out alternate infinite swaying;
 }
-
 .one {
     bottom: 50%;
     left: -3%;
+    animation-delay: 1s;
 }
 .two {
     bottom: 53%;
     left: 7%;
+    animation-delay: .5s;
 }
 .three {
     bottom: 50%;
     left: 13%;
+    animation-delay: 1.5s;
 }
 .four {
     bottom: 55%;
     left: 30%;
 }
-.five {
-    bottom: 56%;
-    left: 40%;
-}
 .six {
     height: 125px;
     bottom: 56%;
     left: 40%;
+    animation-delay: 1s;
 }
 .five {
     width: 125px;
     height: 125px;
     bottom: 55%;
     left: 70%;
+    animation-delay: .5s;
 }
 
 .pond {
@@ -140,9 +250,10 @@ span {
     left: -150%;
     
     width: 500vw;
-    height: 500px;
+    height: 130vw;
     border-radius: 100%;
-    background: linear-gradient(#220165 0%, #008EE6 100%);
+    background: linear-gradient(#110130 0%, #008EE6 100%);
+    box-shadow: 0 0 2px 2px rgba(10,70,30, .8);
 }
 
 .lilypad {
@@ -153,21 +264,21 @@ span {
     box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.2),
         inset -3px 3px 1px rgba(255, 255, 255, 0.3);
     border: 2px solid darkgreen;
-    /* animation: 2s ease-in-out alternate infinite bobbing; */
+    animation: 2s ease-in-out alternate infinite bobbing;
 }
 
 .main-links {
     position: absolute;
     font-family: "Press Start 2P";
+    animation: 2s ease-in-out 1s alternate infinite bobbing;
+    z-index: 100;
 }
-
 #about {
     font-size: 2em;
     bottom: 46%;
     left: 2%;
     text-shadow: 3px 3px 1px black;
 }
-
 #community {
     font-size: 1em;
     text-align: right;
@@ -176,14 +287,12 @@ span {
     right: 15%;
     text-shadow: 2px 2px 1px black;
 }
-
 #join {
     font-size: 3.5em;
     bottom: 17%;
     left: 5%;
     text-shadow: 5px 5px 1px black;
 }
-
 #buy {
     font-size: 2.5em;
     bottom: 38%;
@@ -196,23 +305,23 @@ span {
     width: 60%;
     top: 50%;
     left: -10%;
+    animation-delay: .5s;
 
 }
-
 .lpTR {
     height: 4%;
     width: 30%;
     top: 45%;
     right: 2%;
+    animation-delay: .75s;
 }
-
 .lpBR {
     height: 8%;
     width: 50%;
     top: 57%;
     right: -13%;
+    animation-delay: .25s;
 }
-
 .lpBL {
     height: 18%;
     width: 100%;
@@ -224,7 +333,7 @@ span {
     position: absolute;
     bottom: 0;
     height: 20%;
-    left: -75%;
+    left: calc(50% - 410px);
 }
 
 @keyframes bobbing {
@@ -236,25 +345,49 @@ span {
     }
 }
 
+@keyframes swaying {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(-3deg);
+    }
+    100% {
+        transform: rotate(2deg);
+    }
+}
+
 .text-header {
     font-size: 1.2em;
     font-family: "Press Start 2P";
     text-shadow: 0px 0px 1px black;
     color: #55BA55;
-    margin-bottom: .5em;
+    margin-bottom: .25em;
+}
+
+.text-header:first-of-type{
+    margin-top: .5em;
 }
 
 .about-p {
-    font-size: 1em;
-    margin-bottom: 2em;
+    font-size: .9em;
+    margin-bottom: 1em;
+    background-color: #0f0f0f;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 #about-sec {
-    background: linear-gradient( #55BA55, #0f0f0f 75%);
+    background: linear-gradient( #55BA55, #0f0f0f);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;;
     padding: 0 1em;
+}
+
+#about-sec .text-header {
+    background-color: black;
+    padding: 5px;
 }
 
 #buy-sec {
@@ -262,7 +395,7 @@ span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3em;
+    gap: 4em;
 }
 
 h1 {
@@ -272,7 +405,7 @@ h1 {
     transform: rotate(-7deg);
 }
 
-.button-37 {
+.buttongreen {
   background-color: #13aa52;
   border: 1px solid #13aa52;
   border-radius: 4px;
@@ -289,6 +422,11 @@ h1 {
     height: 30%;
     font-size: 3em;
     margin-top: 2em;
+    transition: 1s; 
+}
+
+.buybutton:hover {
+    background: transparent;
 }
 
 .buytext {
@@ -296,11 +434,30 @@ h1 {
     font-size: 1em;
 }
 
+#nope {
+    position: absolute;
+    top: 52%;
+    width: 150vw;
+    height: 20vh;
+    border: 5px dashed white;
+    text-align: center;
+    font-family: "Press Start 2P";
+    transform: rotate(10deg);
+    font-size: 1em;
+    transition: .5s;
+    animation: 2s ease-in-out alternate infinite swaying;
+}
+#nope:hover {
+    font-size: 5em;
+}
+
 #signup-sec {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(#0f0f0f 70%, #55BA55);
+    border-bottom: 3px solid #228822;
 }
 
 #signup-sec .text-header, #community-sec .text-header {
@@ -329,12 +486,15 @@ form {
 }
 
 .signup-blurb {
-    font-size: 2em;
+    font-size: 1.4em;
+    font-family: "Press Start 2P";
+    text-align: center;
 }
 
 .email-input {
     height: 3em;
     width: 80%;
+    color: #0f0f0f;
 }
 
 .formbutton {
@@ -343,24 +503,104 @@ form {
     height: 10%;
 }
 
+#community-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#community-sec .text-header {
+    padding: 2em 1em 0;
+}
+
+#community-sec span {
+    display: block;
+    padding: 2em;
+}
+
 .sns-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 2em;
+    padding: 0 1em;
+    gap: 3em;
 }
 
 .fa {
-    padding: 50px;
-    background: red;
-    text-align: center;
-    text-decoration: none;
+    padding: 30px;
+    border-radius: 100%;
+    width: 75px;
+    color: white;
+    background:#bb0000;
+    transform: scale(1.5);
+    margin: 15px;
+  }
+  .fa-facebook {
+    background: #3B5998;
+  }
+  .fa-twitter {
+    background: #55ACEE;
+  }
+  .fa-google {
+    background: #dd4b39;
+  }
+  .fa-instagram {
+    background: #007bb5;
+  }
+  .fa-reddit {
+    background: #ff5700;
   }
 
 @media screen and (min-width: 1060px) {
 
+    .star1 {
+        top: 50px;
+        left: 50px;
+    }
+    .star2 {
+        top: 100px;
+        left: 160px;
+    }
+    .star3 {
+        top: 30px;
+        left: 260px;
+    }
+    .star4 {
+        top: 60px;
+        left: 460px;
+    }
+    .star5 {
+        top: 100px;
+        left: 800px;
+    }
+    .star6 {
+        top: 25px;
+        left: 690px;
+    }
+    .star7 {
+        display: block;
+        top: 35px;
+        left: 1200px;
+    }
+    .star8 {
+        display: block;
+        top: 60px;
+        left: 950px;
+    }
+
     .moon {
         right: 5%;
+    }
+
+    .croak {
+        font-size: 4em;
+    }
+    .croak3 {
+        left: 40%;
+    }
+    .croak4 {
+        font-size: 1.5em;
     }
 
     .moon2 {
@@ -374,21 +614,17 @@ form {
     .frog-head {
         border-radius: 35%;
     }
-
     .frog {
         background: linear-gradient(181deg, rgba(34,170,68, .8) 0%, rgba(10,70,30, .8) 5%, rgba(15,15,15,1) 8%);
     }
-
     .eye {
         top: -15%;
         width: 15%;
         height: 50%;
     }
-
     .left-eye {
         left: 27%;
     }
-
     .right-eye {
         right: 27%;
     }
@@ -428,10 +664,8 @@ form {
 
     .pond {
         left: -25%;
+        height: 70vh;
         width: 150vw;
-    }
-
-    .lilypad {
     }
 
     .lpTL {
@@ -440,21 +674,18 @@ form {
         top: 40%;
         left: 8%;
     }
-    
     .lpTR {
         height: 10%;
         width: 30%;
         top: 35%;
         right: 25%;
     }
-    
     .lpBR {
         height: 15%;
         width: 50%;
         top: 50%;
         right: -13%;
     }
-    
     .lpBL {
         height: 20%;
         width: 80%;
@@ -496,5 +727,41 @@ form {
         bottom: 42%;
         right: 8%;
         text-shadow: 5px 5px 1px black;
+    }
+    
+    #nope {
+        animation: none;
+    }
+
+    #about-sec {
+        padding-top: 3em;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: .5em;
+    }
+
+    #about-sec div {
+        width: 30%;
+    }
+
+    .text-header {
+        font-size: 2.25em;
+    }
+
+    .about-p {
+        font-size: 1.5em;
+    }
+
+    fieldset {
+        width: 60%;
+    }
+
+    .sns-box {
+        gap: 5em; 
+    }
+
+    .to-pond {
+        height: 50px;
     }
 }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Game 2</title>
+</head>
+<body>
+<script src="cubegame.js"></script>
+<script>
+
+    //we need to figure out what is the highest given value PER COLOR - PER GAME
+    //for each array, loop through each "round" searching for the numbers preceding the given color, add them to an array, then sort the array and check max
+    //output the max(red)*max(green)*max(blue) and add to a running total
+
+    let gameTotal = 0;
+
+    let gameArray = cubegame.split("\n"); //split into games, where each game ID is (index + 1)
+    for (let i = 0; i < gameArray.length; i++) {
+        gameArray[i] = gameArray[i].split(";"); //sub arrays are strings of individual rounds
+    }
+
+    for (let i = 0; i < gameArray.length; i++) {
+        gameArray[i][0] = gameArray[i][0].substring(gameArray[i][0].indexOf(":") + 2); //chops off "Game ID: "
+    }
+    //I don't think the absence of the game ID makes a difference here.
+
+    for (let i = 0; i < gameArray.length; i++) { //goes through the Game ID arrays
+        gameTotal = gameTotal + findMaxes(gameArray[i]); //returns the max number per each of three colors, multipled together, adds to total
+    }
+
+    function findMaxes(inArray){
+        let maxRed = 0;
+        let maxGreen = 0;
+        let maxBlue = 0;
+        for (const i of inArray) {
+            if (i.indexOf("green") !== -1) {
+                if (parseInt(i.substring(i.indexOf("green") - 3, i.indexOf("green") - 1)) > maxGreen) {
+                    maxGreen = parseInt(i.substring(i.indexOf("green") - 3, i.indexOf("green") - 1));
+                }
+            }
+                if (i.indexOf("blue") !== -1) {
+                    if (parseInt(i.substring(i.indexOf("blue") - 3, i.indexOf("blue") - 1)) > maxBlue) {
+                    maxBlue = parseInt(i.substring(i.indexOf("blue") - 3, i.indexOf("blue") - 1));
+                }
+            }
+                if (i.indexOf("red") !== -1) {
+                    if (parseInt(i.substring(i.indexOf("red") - 3, i.indexOf("red") - 1)) > maxRed) {
+                    maxRed = parseInt(i.substring(i.indexOf("red") - 3, i.indexOf("red") - 1));
+                }
+            }
+        }
+        return (maxGreen * maxBlue * maxRed);
+    }
+</script>
+</body>
+</html>

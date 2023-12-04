@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Game</title>
+</head>
+<body>
+<script src="cubegame.js"></script>
+<script>
+
+    //you need to iterate over each substring to determine if COLOR exists and, if so, if the accompanying number exceeds the given value.
+    //max values: 12 RED, 13 GREEN, 14 BLUE
+
+    let gameArray = cubegame.split("\n"); //split into games, where each game ID is (index + 1)
+    for (let i = 0; i < gameArray.length; i++) {
+        gameArray[i] = gameArray[i].split(";"); //sub arrays are strings of individual rounds
+    }
+
+    for (let i = 0; i < gameArray.length; i++) {
+        gameArray[i][0] = gameArray[i][0].substring(gameArray[i][0].indexOf(":") + 2); //chops off "Game ID: "
+    }
+    //I don't think the absence of the game ID makes a difference here.
+
+    //testers - answer 5
+    let testArray = [["3 blue, 25 green, 4 red"],["3 blue, 5 red"],["2 green, 5 red"]]
+    let gameTotal = 0;
+
+    for (let i = 0; i < gameArray.length; i++) { //goes through the Game ID arrays
+        if (checkPoss(gameArray[i])) { //checks if all rounds of given game are possible
+            gameTotal = gameTotal + i + 1;
+        } else continue;
+    }
+
+    function checkPoss(inSubArray) {
+        for (const i of inSubArray) {
+            if (i.indexOf("green") !== -1) {
+                if (parseInt(i.substring(i.indexOf("green") - 3, i.indexOf("green") - 1)) > 13) {
+                    return false;
+                }
+            }
+                if (i.indexOf("blue") !== -1) {
+                    if (parseInt(i.substring(i.indexOf("blue") - 3, i.indexOf("blue") - 1)) > 14) {
+                        return false;
+                }
+            }
+                if (i.indexOf("red") !== -1) {
+                    if (parseInt(i.substring(i.indexOf("red") - 3, i.indexOf("red") - 1)) > 12) {
+                        return false;
+                }
+            }
+        }
+        return true;
+    }
+</script>
+    
+</body>
+</html>
