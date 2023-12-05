@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <style>
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(powderblue, linen);
+        }
+
+        #gamebox, #bad-guess-cont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30vh;
+            max-width: 90vw;
+            padding: 1em;
+            gap: 1em;
+            box-shadow: 10px 10px 0 black;
+            border: 1px solid black;
+            background: linen;
+        }
+
+        #bad-guess-cont {
+            margin-top: 2em;
+            height: 10vh;
+            display: flex;
+        }
+
+        #bad-guess-letters {
+            width: 90%;
+            font-size: 2em;
+            color: crimson;
+            font-family: monospace;
+        }
+
+        .letter-space {
+            border-bottom: 2px solid black;
+            width: 3em;
+            height: 1em;
+            font-family: monospace;
+            font-size: 3em;
+            text-align: center;
+        }
+
+        #gameEnd {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        #winorlose {
+            font-size: 10em;
+            color: midnightblue;
+            text-shadow: 2px 2px white;
+            font-family: monospace;
+            text-align: center;
+        }
+
+        body > div:first-child {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 3em;
+            padding-bottom: 1em;
+        }
+
+        #chances {
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="chances-box"><span id="chances"></span> wrong moves left... :)</div>
+    <div id="gamebox"></div>
+    <div id="gameEnd"><span id="winorlose"></span></div>
+    <div id="bad-guess-cont"><div>wrong guesses:</div><div id="bad-guess-letters"></div></div>
+
+    <script>
+        
+        // ------------------------------------------------------ GAME CREATION
+        const gameBox = document.querySelector("#gamebox");
+        let randomWord = "";
+        let guessedWord = [];
+        let wrongGuess = 5;
+        document.getElementById("chances").innerHTML = wrongGuess;
+        let badGuesses = [];
+        const badGuessBox = document.getElementById("bad-guess-letters");
+    
+        //initialize and pull a random word, chopped into an array
+        const wordAPI = new XMLHttpRequest();
+        wordAPI.open("GET", "https://random-word-api.herokuapp.com/word");
+        wordAPI.addEventListener("load", function () {
+            randomWord = JSON.parse(wordAPI.responseText);
+            randomWord = randomWord[0].split("");
+
+            createSpaces(randomWord);
+        });
+        wordAPI.send();
+
+        //create spaces in the #gamebox per number of characters in passed array
+        function createSpaces(inArray) {
+            for (let i = 0; i < inArray.length; i++) {
+                let letterDiv = document.createElement("div");
+                letterDiv.classList.add("letter-space");
+                letterDiv.id = i;
+                gameBox.appendChild(letterDiv);
+            }
+        }
+        // ------------------------------------------------------ END GAME CREATION
+
+        // ------------------------------------------------------ GAME PLAY
+        function updateGuessedWord() {
+            guessedWord = []; // Clear the guessed word array
+            let allLettersGuessed = true;
+
+            for (let i = 0; i < randomWord.length; i++) {
+                const letterDiv = document.getElementById(i);
+                if (letterDiv.innerHTML !== "") {
+                    guessedWord.push(letterDiv.innerHTML); // Add guessed letters to the array
+                } else {
+                    guessedWord.push("_");
+                    allLettersGuessed = false;
+                }
+            }
+
+            if (allLettersGuessed) {
+                if (guessedWord.join("") === randomWord.join("")) {
+                    document.getElementById("gameEnd").style.display = "flex";
+                    document.getElementById("winorlose").innerHTML = "YOU WIN!<br>The word was " + '"' + randomWord.join("") + '"';
+                    document.getElementById("chances-box").innerHTML = "...for now.";
+                    document.getElementById("winorlose").style.display = "block";
+                    window.removeEventListener("keyup", keyupHandler);
+                    window.addEventListener("keyup", () => {
+                        location.reload();
+                    });
+                }
+            }
+
+            if (wrongGuess === 0) {
+                document.getElementById("gameEnd").style.display = "flex";
+                    document.getElementById("winorlose").innerHTML = "YOU LOSE!<br>The word was " + '"' + randomWord.join("") + '"';
+                    document.getElementById("chances-box").innerHTML = "<span id='chances'>bye :')</span>";
+                    document.getElementById("winorlose").style.display = "block";
+                    window.removeEventListener("keyup", keyupHandler)
+                    window.addEventListener("keyup", () => {
+                        location.reload();
+                    });
+            }
+        }
+
+
+        let userGuess = "";
+        window.addEventListener("keyup", keyupHandler);
+        
+        function keyupHandler (e) {
+            userGuess = e.key.toLowerCase();
+            if (randomWord.indexOf(userGuess) === -1) {
+                wrongGuess--;
+                document.getElementById("chances").innerHTML = wrongGuess;
+                badGuesses.push(userGuess);
+                badGuessBox.innerHTML = badGuesses;
+            }
+            for (let i = 0; i < randomWord.length; i++) {
+                if (userGuess === randomWord[i]) {
+                    document.getElementById(i).innerHTML = userGuess;
+                }
+            }
+        updateGuessedWord()
+        };
+
+        // ------------------------------------------------------ END GAME PLAY
+    </script>
+</body>
+</html>
