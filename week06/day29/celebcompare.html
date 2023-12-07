@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who's Taller? Celeb Edition!</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: #282C35;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        main {
+            width: 90vw;
+            height: 90vh;
+            background: #F0F0F0;
+            border-radius: 10px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+        }
+        .button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            width: 75%;
+            height: 15%;
+
+            border-radius: 5px;
+            background: #102010;
+            color: #F0f0f0;
+            font-size: 1.5em;
+            text-transform: capitalize;
+        }
+        #score-box {
+            width: 75%;
+            letter-spacing: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Who is Taller?</h1>
+        <div class="button" id="celeb1"></div>
+        <h3>vs</h3>
+        <div class="button" id="celeb2"></div>
+        <div id="score-box">
+            <h2>Tries Left:<span id="tries"></span></h2>
+            <h2>Score: <span id="score"></span> /10</h2>
+        </div>
+    </main>
+<script>
+
+    let gameArray = [];
+    let turnsLeft = 10;
+    let pointsTotal = 0;
+    let index = 0;
+    //asks the API for data, JSONs it for usage --------------------------------/
+    async function fetchCelebrity() {
+        const apiURL = `https://api.api-ninjas.com/v1/celebrity?min_height=0.1`;
+        const NINJA_KEY = "Su4JLIQNivO/wvaBohLd8A==yhZbmG6XnYrncjfl";
+        try {
+            const response = await fetch(apiURL, {
+                headers: {
+                    "X-Api-Key": NINJA_KEY
+                }
+            });
+
+        const data = await response.json();
+        return data;
+        }
+        catch (error) {
+            console.error("Error: ", error);
+            return null;
+        }
+    } // ----------------------------------------------------------- end API contact
+
+    // to randomize the API's info
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function populateButton(button1, button2, celeb1, celeb2) {
+        button1.innerHTML = celeb1.name;
+        button2.innerHTML = celeb2.name;
+
+        if (celeb1.height > celeb2.height) {
+            button1.addEventListener("click", correctClick);
+            button2.addEventListener("click", wrongClick);
+        } else {
+            button1.addEventListener("click", wrongClick);
+            button2.addEventListener("click", correctClick);
+        }
+    }
+
+    function correctClick() {
+        console.log("CLICKED!")
+        pointsTotal++;
+        updateGame();
+    }
+    function wrongClick() {
+        console.log("CLICKED!")
+        updateGame();
+    }
+
+    function updateGame() {
+            if (turnsLeft === 0) {
+                // Game over
+                triesLeft.textContent = turnsLeft;
+                document.getElementById('celeb1').removeEventListener('click', correctClick);
+                document.getElementById('celeb2').removeEventListener('click', wrongClick);
+            } else {
+                // Continue the game
+                index = index + 2;
+                turnsLeft--;
+                populateButton(celebBut1, celebBut2, gameArray[index], gameArray[index + 1]);
+                triesLeft.textContent = turnsLeft;
+                playerScore.textContent = pointsTotal;
+            }
+        }
+
+    //DOM stuff
+    const celebBut1 = document.getElementById("celeb1");
+    const celebBut2 = document.getElementById("celeb2");
+    const triesLeft = document.getElementById("tries");
+    triesLeft.textContent = turnsLeft;
+    const playerScore = document.getElementById("score");
+    //run that thang
+    fetchCelebrity()
+        .then(data => {
+            
+            shuffleArray(data); //remix DL'd info
+
+            //wipe and create an array of 20 celebs
+            gameArray = [];
+            for (i = 0; i < 20; i++) {
+                gameArray.push(data[i]);
+            }
+
+            populateButton(celebBut1, celebBut2, gameArray[index], gameArray[index + 1]);
+
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Database Search</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linen;
+        }
+
+        #flagimg {
+            width: 15em;
+            padding: .5em;
+            margin: 1em 0;
+            box-shadow: 5px 5px #070707;
+            border: 1px solid black;
+        }
+
+        #options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 50vw;
+            gap: 3em;
+            padding: 1em;
+            border: 1px solid black;    
+            background: powderblue;
+        }
+
+        .option {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            width: 5em;
+            height: 3em;
+
+            font-size: 1.5em;
+            padding: 1.5em;
+            background: linen;
+            border: 1px solid black;
+            box-shadow: 5px 5px #070707;
+        }
+
+        .option img {
+            width: 35%;
+        }
+
+        #gameover-box {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+            top: calc(50% - 15em);
+            left: calc(50% - 18em);
+        }
+
+        #gameover {
+            width: 15em;
+            height: 10em;
+            background: rgba(0, 0, 0, 0.8);
+
+            color: snow;
+            font-size: 2em;
+            text-align: center;
+            
+            padding: 1em;
+            box-shadow: 5px 5px 5px midnightblue;
+        }
+
+        #restart {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            width: 125px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.8);
+
+            color: snow;
+            text-align: center;
+            
+            margin-top: 1em;
+            padding: .5em;
+            box-shadow: 5px 5px 5px midnightblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="flag"><img id="flagimg" src=""/></div>
+    <div id="options"></div>
+    <div id="gameover-box">
+        <div id="gameover"></div>
+        <div id="restart">More!</div>
+    </div>
+    <script>
+    
+    //waits on info from the API before processinging game elements using said info
+    let countryArr = [];
+    let chosenCountry = "";
+    async function getCountries() {
+        try {
+            const response = await fetch("https://restcountries.com/v3.1/all");
+            const bigList = await response.json();
+
+            for (let i = 0; i < 5; i++) {
+                countryArr.push(bigList[Math.floor(Math.random() * bigList.length)]);
+            }
+
+            // choose a specific country and present its flag
+            chosenCountry = countryArr[Math.floor(Math.random() * 5)];
+            const flagImg = document.getElementById("flagimg");
+            flagImg.src = chosenCountry.flags.svg;
+
+            createOptions(countryArr);
+        } catch (error) {
+            console.error("Error fetching countries:", error);
+        }
+    }
+
+    //get all these DOM elements ready for manipulation
+    const gameOver = document.getElementById("gameover-box");
+    const winLoss = document.getElementById("gameover");
+    const restartBut = document.getElementById("restart");
+    const optionBox = document.getElementById("options");
+    restartBut.addEventListener("click", () => {
+            gameOver.style.display = "none";
+            optionBox.innerHTML = "";
+            countryArr = [];
+            chosenCountry = "";
+            getCountries();
+        });
+
+    //winning/losing logic
+    function youWin() {
+        winLoss.innerHTML = "<h2>Correct!</h2><p>Officially known as " + chosenCountry.name.official + ", " + chosenCountry.name.common + " is a country in " +
+            chosenCountry.region + " with a population of about " + chosenCountry.population.toLocaleString() + "!";
+        gameOver.style.display = "flex";
+    }
+
+    function youLose() {
+        winLoss.innerHTML = `<h2>The right answer was ${chosenCountry.name.common}!</h2> Take a look at a map of ${chosenCountry.region}!`
+        gameOver.style.display = "flex";
+    }
+
+    function babyFlag(box) {
+        box.style.textDecoration = "line-through";
+        box.style.fontStyle = "italic";
+        for (let i = 0; i < countryArr.length; i++) {
+            if (box.innerHTML === countryArr[i].name.common) {
+                let wrongFlag = document.createElement("img");
+                wrongFlag.src = countryArr[i].flags.svg
+                box.appendChild(wrongFlag);
+            }
+        }
+    }
+
+    //creates the options
+    function createOptions(inArr) {
+        let wrongChoice = 0;
+        for (i = 0; i < 5; i++) {
+            const newOption = document.createElement("div");
+            newOption.id = i;
+            newOption.classList.add("option");
+            newOption.innerHTML = countryArr[i].name.common;
+            newOption.addEventListener("click", () => {
+                if (newOption.innerHTML === chosenCountry.name.common) {
+                    youWin();
+                } else if (wrongChoice === 2) {
+                    babyFlag(newOption);
+                    youLose();
+                } else {
+                    babyFlag(newOption);
+                    wrongChoice++;
+                }
+            });
+            optionBox.appendChild(newOption);
+        }
+    }
+
+    // Call the function to retrieve countries and present flag - GAME START
+    getCountries();
+
+    </script>
+</body>
+</html>

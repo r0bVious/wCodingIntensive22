@@ -8,15 +8,9 @@
 <body>
 <script src="engine.js"></script>
 <script>
-    //I need to find the beginning and end of the numString
-    //I then need to find if there are symbols at the index values as such:
-    //previous line's numString's first index value - 1 to + 1
-    //same line's numString's index value -1 and + 1
-    //next line's numString's first index value -1 to +1
-    //else skip numString value
 
     testData = `467..114..
-...*......
+...*.....
 ..35..633.
 ......#...
 617*......
@@ -31,10 +25,9 @@
 
     //array of symbols
     let symbolArr = ["*", "/", "+", "%", "&", "=", "-", "@", "$"];
-
     let numTotal = 0;
 
-    // iterates across characters and finds where 3, 2, or 1 digit numbers exist
+    // iterates across characters and finds where 3, 2, or 1 digit nums exist
     // for (const line of dataArray) {
     //     for (let i = 0; i < line.length; i++) {
     //         if (parseInt(line[i]) !== NaN && (parseInt(line[i + 1]) !== NaN) && (parseInt(line[i + 2]) !== NaN)) {
