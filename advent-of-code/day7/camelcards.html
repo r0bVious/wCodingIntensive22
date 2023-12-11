@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camel Cards</title>
+</head>
+<body>
+<script src="camelcards.js"></script>
+<script>
+    const camelCardsTEST = `32T3K 765
+T55J5 684
+KK677 28
+KTJJT 220
+QQQJA 483`
+
+    //make an array of subarrays, each subarray being one hand and it's bid
+    let camelCardsArr = camelCardsTEST.split("\n");
+    for (let i = 0; i < camelCardsArr.length; i++) {
+        camelCardsArr[i] = camelCardsArr[i].split(" ");
+    }
+
+    //sort the arrays, putting each hand "Type" into it's own array (just because)
+    camelCardsArr.forEach((lineof) => {
+        if (lineof[0][0])
+    });
+</script>
+</body>
+</html>

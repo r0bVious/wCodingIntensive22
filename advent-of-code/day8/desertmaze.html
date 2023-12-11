@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desert Maze</title>
+</head>
+<body>
+<script src="desertmaze.js"></script>
+<script>
+let testdirections = "LLLL";
+
+let testmap = 
+`AAA = (BBB, CCC)
+BBB = (DDD, EEE)
+CCC = (ZZZ, GGG)
+DDD = (EEE, DDD)
+EEE = (GGG, EEE)
+GGG = (CCC, GGG)
+ZZZ = (ZZZ, ZZZ)`;
+
+let mapPos = 0; //regardless of the position's name, you will start on pos 0 and find next pos by checking against subarray[0]
+let counter = 0; //how many steps until arriving at ZZZ
+let step = 0; //homemade loop to make the string circular
+
+//this turns the raw data into an array, where the first index is the destination, and the second is a subarray with L and R options
+let mapArray = map.split("\n");
+mapArray = mapArray.map((i) => i.split(" = "));
+for (const i of mapArray) {
+    i[1] = i[1].replace(/^\(|\)$/g, '');
+    i[1] = i[1].split(", ");
+}
+
+
+// let i = 0;
+// while (true) {
+//     if (i < testdirections.length) {
+//         if (testdirections[i] === "L") { 
+//         nextStep = mapArray[mapPos][1][0];
+//         } else nextStep = mapArray[mapPos][1][1];
+//         i++
+//         console.log(i);
+//     } else if (i === testdirections.length) {
+//         if (testdirections[i] === "L") { 
+//         nextStep = mapArray[mapPos][1][0];
+//         } else nextStep = mapArray[mapPos][1][1];
+//         i = 0;
+//         console.log(i);
+//     }
+//     nextPos(mapArray, nextStep);
+//     counter++;
+//     // console.log(mapArray[mapPos][0]);
+//     if (mapArray[mapPos][0] === "ZZZ") {
+//         break;
+//     }
+// }
+
+//the problem here is that once it hits the end of the directions string, it just spams no direction until ZZZ is found
+
+
+//finds the next position according to the string found by the Ls or Rs
+function nextPos(inArray, inPos) {
+    for (let i = 0; i < inArray.length; i++) {
+       if (inArray[i][0] === inPos) {
+            mapPos = i;
+            // console.log("mapPOS:", mapPos);
+            return mapPos;
+        }
+    }
+}
+
+function nextStep(inArray) {
+    if (step > inArray.length) {
+        step = 0;
+    }
+    let nextStep = "";
+    if (inArray[step] === "L") { 
+        nextStep = mapArray[mapPos][1][0];
+    } else {
+        nextStep = mapArray[mapPos][1][1];
+    }
+    // console.log("step:", step);
+    return nextStep;
+}
+
+while (mapArray[mapPos][0] !== "ZZZ") {
+    // for (step of directions) {
+    //     let nextStep = "";
+    //     if (step === "L") { 
+    //         nextStep = mapArray[mapPos][1][0];
+    //     } else if (step === "R") {
+    //         nextStep = mapArray[mapPos][1][1];
+    //     }
+        nextPos(mapArray, nextStep(directions));
+        step++
+        counter++;
+        // console.log(mapArray[mapPos][0]);  
+    }
+
+</script>
+</body>
+</html>

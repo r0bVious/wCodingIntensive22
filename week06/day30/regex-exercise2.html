@@ -1,0 +1,95 @@
+<script>
+    // 1. Write a JavaScript function to test the first character of a string is uppercase or not.
+    function firstCharUp(str) {
+        let regEx = /^[A-Z].+/;
+        return regEx.test(str);
+    }
+    // 2. Write a JavaScript function to check a credit card number.(Example : credit card number ( format 9999-9999-9999-9999 )
+    function checkCC(str) {
+        let regEx = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
+        return regEx.test(str);
+    }
+    // 3. Write a pattern that matches e-mail addresses. The personal information part contains the following ASCII characters.
+    function checkEmail(str) {
+        let regEx = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,}$/;
+        return regEx.test(str);
+    }
+    // 4. Write a JavaScript function to search a date within a string.
+    function checkDate(str) {
+        let regEx = /\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])/;
+        return regEx.test(str);
+    }
+    // 5. Write a JavaScript function that works as a trim function (string) using regular expression.
+    function stringTrimmer(str) {
+        return str.replace(/^\s+|\s+$/g, '');
+    }
+    // 6. Write a JavaScript function to count number of words in string.
+    function wordCounter(str) {
+        let wordArr = str.trim().split(/\s+/);
+        return wordArr.length;
+    }
+
+    // 7. Write a JavaScript function to check whether a given value is IP address value or not.
+    function checkIP(str) {
+        let regEx = /^/
+        return regEx.test(str);
+    }
+    // 8. Write a JavaScript function to count the number of vowels in a given string.
+    function countVowels(str) {
+        let regEx = /[aeiou]/;
+        let vowelArr = str.trim().split(regEx);
+        return vowelArr.length;
+    }
+    // 9. Write a JavaScript function to check whether a given value is a valid url or not.
+    function checkURL(str) {
+        let regEx = /^(ftp|http|https):\/\/[^ "]+$/;
+        return regEx.test(str);
+    }
+    // 10. Write a JavaScript function to check whether a given value is alpha numeric or not.
+    function checkAlphaNum(str) {
+        let regEx = /[a-zA-Z0-9]+/;
+        return regEx.test(str);
+    }
+    // 11. Write a JavaScript function to check whether a given value is a time string or not.
+    function checkTime(str) {
+        let regEx = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
+        return regEx.test(str);
+    }
+    // 12. Write a JavaScript function to check whether a given value is a US zip code or not.
+    function usZip(str) {
+        let regEx = /[0-9]{5}/;
+        return regEx.test(str);
+    }
+    // 13. Write a JavaScript function to check whether a given value is a UK Post Code or not.
+
+    // 14. Write a JavaScript function to check whether a given value is a Canada Post Code or not.
+
+    // 15. Write a JavaScript function to check whether a given value is a US social security number or not.
+    function ssNum(str) {
+        let regEx = /^[0-9]{3}-[0-9]{2}-[0-9]{4}$/;
+        return regEx.test(str);
+    }
+    // 16. Write a JavaScript function to check whether a given value is a hexadecimal value or not.
+
+    // 17. Write a JavaScript function to check whether a given value is a hexcolor value or not.
+
+    // 18. Write a JavaScript function to check whether a given value represents a domain or not.
+    function isDomain(str) {
+        let regEx = /^[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)*\.[a-zA-Z]{2,}$/;
+        return regEx.test(str);
+    }
+    // 19. Write a JavaScript function to check whether a given value is html or not.
+    function isHTML(str) {
+        let regEx = /<[a-zA-Z]+>$/;
+        return regEx.test(str);
+    }
+    // 20. Write a JavaScript function to check a given value contains alpha, dash and underscore.
+    function hasThose(str) {
+        if (/[a-zA-Z]/.test(str) && /-/.test(str) && /_/.test(str)) return true;
+        return false;
+    }
+    // 21. Write a JavaScript function to print an integer with commas as thousands separators.
+    function commaifier(str) {
+        
+    }
+</script>

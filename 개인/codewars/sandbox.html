@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function sum (numbers) {
+        if (numbers === NaN) return 0;
+            let totalSum = 0;
+            for (i = 0; i < numbers.length; i++) {
+                totalSum = totalSum + numbers[i]
+            }
+            return totalSum;
+        };
+
+    function findNeedle(haystack) { 
+        return "found the needle at position " + haystack.indexOf("needle");
+    }
+
+    function solution(str){
+    let revStr = [];
+        for (i of str){
+            revStr.push(i);
+        }
+    revStr = revStr.reverse().join("");
+    return revStr;
+    }
+
+    function accum(s) {
+        let finalString = [];
+        for (let i = 0; i < s.length; i++) {
+            let first = true;
+            let letterArray = [];
+            for (let j = i + 1; j > 0; j--) {
+                if (first === true) {
+                    letterArray.push(s[i].toUpperCase());
+                    first = false;
+                } else {
+                letterArray.push(s[i].toLowerCase());
+                }
+            }
+            finalString.push(letterArray.join(""));
+        }
+        return finalString.join("-");
+    }
+</script>
+</body>
+</html>

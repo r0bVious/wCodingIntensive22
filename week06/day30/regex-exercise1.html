@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regex time</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const str2 = "sdfcdskvsdm";
+        const str3 = "AAZddASvKlkfec";
+        const str4 = "05678298818";
+
+        const str5 = "abbbbbb";
+        const str6 = "abbc";
+        const str7 = "ab";
+
+        const str9 = "ac";
+
+        const str10 = "abb";
+        const str11 = "abbb";
+        const str12 = "abbbbb";
+
+        const str13 = "aaNBB";
+        const str14 = "aaaaaaA";
+        const str15 = "AANBB";
+        const str16 = "aaaabbb";
+
+        const str17 = "AAvdes_vEFZc_cdsAZD";
+        const str18 = "ZSKJZ";
+        const str19 = "qwerty_uiop_cvbn";
+
+        // 1. match str2 but not str3 and not str4
+        console.log("1. match str2 but not str3 and not str4");
+        console.log("str2:", str2.match(/^[a-z]+$/));
+        console.log("str3:", str3.match(/^[a-z]+$/));
+        console.log("str4:", str4.match(/^[a-z]+$/));
+        // 2. match str4 but not str2 and not str3
+        console.log("2. match str4 but not str2 and not str3");
+        console.log("str4:", str4.match(/[0-9]+/));
+        console.log("str2:", str2.match(/[0-9]+/));
+        console.log("str3:", str3.match(/[0-9]+/));
+        // 3. match str2 and str3 but not str4
+        console.log("3. match str2 and str3 but not str4");
+        console.log("str2:", str2.match(/[a-zA-Z]+/));
+        console.log("str3:", str3.match(/[a-zA-Z]+/))
+        console.log("str4:", str4.match(/[a-zA-Z]+/))
+        // 4. match str5 str6 and str7 but not str9
+        console.log("4. match str5 str6 and str7 but not str9");
+        console.log("str5:", str5.match(/ab+c*/));
+        console.log("str6:", str6.match(/ab+c*/));
+        console.log("str7:", str7.match(/ab+c*/));
+        console.log("str9:", str9.match(/ab+c*/));
+        // 5. match str11 and str12 but not str10
+        console.log("5. match str11 and str12 but not str10");
+        console.log("str11:", str11.match(/ab{3,}/));
+        console.log("str12:", str12.match(/ab{3,}/));
+        console.log("str10:", str10.match(/ab{3,}/));
+        // 6. match str13 and str14 but not str15 and str16
+        console.log("6. match str13 and str14 but not str15 and str16");
+        console.log("str13:", str13.match(/a+N*A*[B*|A*]/));
+        console.log("str14:", str14.match(/a+N*A*[B*|A*]/));
+        console.log("str15:", str15.match(/a+N*A*[B*|A*]/));
+        console.log("str16:", str16.match(/a+N*A*[B*|A*]/));
+        // 7. match str17 and str18 and str19
+        console.log("7. match str17 and str18 and str19");
+        console.log("str17:", str17.match(/\w+/));
+        console.log("str18:", str18.match(/\w+/));
+        console.log("str19:", str19.match(/\w+/));
+    </script>
+</body>
+
+</html>
