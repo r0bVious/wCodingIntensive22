@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>States and Capitals</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            width: 35%;
+            height: 5%;
+            font-size: 1.2em;
+        }
+
+        button {
+            width: 15%;
+            height: 2em;
+        }
+
+        #results {
+            border: 1px solid gray;
+            height: 3em;
+            width: 36%;
+            margin-top: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" placeholder="Type in either a state or a state to receive it's counterpart" />
+    <div id="results"></div>
+    <!-- <button>Submit</button> -->
+    
+    <script>
+        let resultsbox = document.getElementById("results");
+
+        document.querySelector("input").addEventListener("keyup", () => {
+            let inString = document.querySelector("input").value;
+            if (inString) {
+                fetch("http://localhost:8080/week07/day32/AutoCompletionSystem.php?stateOrCapital=" + inString)
+                    .then((response) => {
+                        return response.text();
+                    })
+                    .then((data) => {
+                        resultsbox.innerHTML = ''; // Clear previous results
+                        let resultsArr = data.split(" | ");
+                        for (let i = 0; i < resultsArr.length; i++) {
+                            let possResult = document.createElement("div");
+                            possResult.textContent = resultsArr[i];
+                            resultsbox.appendChild(possResult);
+                        }
+                    });
+                }
+            });
+    </script>
+</body>
+</html>
