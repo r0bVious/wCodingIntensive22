@@ -1,0 +1,19 @@
+1. INDEX.PHP
+    a. get the json using file_get_contents("./movies.json")
+    b. decode the json
+    c. loop through the movies array inside that object
+        1. store the current movie as a variable
+        2. include card.php
+
+2. CARD.PHP 
+    a. Create the HTML for a card
+    b. Insert the values using the variable from 1.c.1 above
+    c. Set the poster attribute for the video tag
+    d. wrap the video with an <a></a> tag
+        1. url_encode the title
+        2. href="watch.php?path=######.mp4&title=######"
+
+3. WATCH.PHP  
+    a. get the video path from the $_GET superglobal variable
+    b. Create the HTML to show a large video 1080x720
+    c. Set the title from the $_GET title parameter

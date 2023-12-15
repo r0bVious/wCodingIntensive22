@@ -21,7 +21,7 @@ foreach($data as $state) {
 //     }
 // }
 
-//checks for partial matches
+//checks for partial matches - no reason to separate the states/caps if you're going to just rejoin them in the echo, dummy
 for ($i = 0; $i < count($stateList); $i++) {
     for ($j = 0; $j <= 1; $j++) {
         if (str_contains(strtoupper($stateList[$i][$j]), strtoupper($userInput))) {

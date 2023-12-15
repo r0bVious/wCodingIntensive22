@@ -11,12 +11,15 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            background: lightseagreen;
         }
 
         input {
             width: 35%;
             height: 5%;
             font-size: 1.2em;
+            border: none;
+            border: 2px solid cadetblue;
         }
 
         button {
@@ -25,38 +28,58 @@
         }
 
         #results {
-            border: 1px solid gray;
-            height: 3em;
-            width: 36%;
-            margin-top: 5px;
+            font-size: 1.2em;
+            list-style: none;
+            width: 35%;
+            margin-top: 0.5em;
             display: flex;
             flex-direction: column;
+            position: fixed;
+            top: 55%;
+        }
+        
+        #results li {
+            padding: 0.5em;
+            color: #FFF;            
+            width: 85%;
+            background: #0F0F0F;
+            transition: 0.2s all;
+        }
+
+        #results li:hover {
+            text-shadow:#FFF;
+            background: #4F4F4F;
         }
     </style>
 </head>
 <body>
 
     <input type="text" placeholder="Type in either a state or a state to receive it's counterpart" />
-    <div id="results"></div>
+    <ul id="results"></ul>
     <!-- <button>Submit</button> -->
     
     <script>
         let resultsbox = document.getElementById("results");
 
         document.querySelector("input").addEventListener("keyup", () => {
+            resultsbox.innerHTML = ''; // Clear previous results
             let inString = document.querySelector("input").value;
-            if (inString) {
+            if (inString.length > 1) {
                 fetch("http://localhost:8080/week07/day32/AutoCompletionSystem.php?stateOrCapital=" + inString)
                     .then((response) => {
                         return response.text();
                     })
                     .then((data) => {
-                        resultsbox.innerHTML = ''; // Clear previous results
                         let resultsArr = data.split(" | ");
                         for (let i = 0; i < resultsArr.length; i++) {
-                            let possResult = document.createElement("div");
-                            possResult.textContent = resultsArr[i];
-                            resultsbox.appendChild(possResult);
+                            if (resultsArr[i] !== "") {
+                                let possResult = document.createElement("li");
+                                possResult.textContent = resultsArr[i];
+                                possResult.addEventListener("click", () => {
+                                    window.location.href = "https://en.wikipedia.org/w/index.php?search=" + resultsArr[i];
+                                });
+                                resultsbox.appendChild(possResult);
+                            }
                         }
                     });
                 }

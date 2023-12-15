@@ -46,6 +46,18 @@
         }
         return finalString.join("-");
     }
+
+    function disemvowel(str) {
+        // let vowels = /[aeiou]/i;
+        // let newString = "";
+        // for (letter of str) {
+        //     if (vowels.test(letter) == false) {
+        //     newString = newString + letter;
+        //     }
+        // }
+        // return newString;
+        return str.replace(/[aeiou]/gi, ''); //dude KISS
+    }
 </script>
 </body>
 </html>
