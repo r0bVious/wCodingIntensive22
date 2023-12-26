@@ -58,6 +58,33 @@
         // return newString;
         return str.replace(/[aeiou]/gi, ''); //dude KISS
     }
+
+    function sumAll(arr) {
+        arr = arr.sort((a, b) => a - b);
+        let total = 0;
+        let startVal = arr[0];
+        let endVal = arr[1];
+        while (startVal <= endVal) {
+            total = total + startVal;
+            startVal++;
+        }
+        return total;
+    }
+
+    function translatePigLatin(str) {
+        let vowels = "aeiou";
+        if (vowels.includes(str[0])) {
+            str = str + "way";
+        } else {
+            let letterArr = str.split("")
+            let endLetter = letterArr.shift("");
+            letterArr.push(endLetter);
+            str = letterArr.join("") + "ay";
+        }
+        return str;
+    }
+
+        translatePigLatin("consonant");
 </script>
 </body>
 </html>
