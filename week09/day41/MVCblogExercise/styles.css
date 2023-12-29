@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    background: #DFDEDF;
+}
+
+h1, h2 {
+    font-family: monospace;
+    width: 100%;
+    display: block;
+    text-align: center;
+    top: 0;
+}
+
+#page-head {
+    margin: 0;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(30,30,30);
+    color: #DFDFDF;
+
+    z-index: 999;
+}
+
+.page {
+    margin-top: 4.5em;
+    width: 100%;
+    display: flex;
+    margin-left: 2em;
+}
+
+.log-in-prompt {
+    width: 75vw;
+    height: 75vh;
+    position: absolute;
+    top: calc(50% - 75vh*.5);
+    left: calc(50% - 75vw*.5);
+
+    background: rgba(20, 20, 80, .95);
+    border-radius: 15px;
+    border: 2px solid #DFDFDF;
+    color: #DFDFDF;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    z-index: 10;
+}
+
+.log-in-prompt input {
+    font-size: 1.5em;
+    width: 75%;
+    border-radius: 5px;
+}
+
+.log-in-prompt h1 {
+    font-size: 3em;
+}
+
+form {
+    width: 35%;
+    display: flex;
+    gap: 5px;
+}
+
+form button {
+    padding: 10px 14px;
+    font-family: monospace;
+    border-radius: 6px;
+    border: none;
+    background: #6E6D70;
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+    color: #DFDFDF;
+}
+
+nav {
+    position: fixed;
+    right: 0;
+    width: 15%;
+    height: 100vh;
+    background: rgb(30,30,30);
+    color: #DFDFDF;
+}
+
+ul {
+    list-style: none;
+    padding: 0em .5em;
+}
+
+li {
+    padding: 1em .5em;
+    background: rgb(0,0,0);
+    border-radius: 15px;
+    margin: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: #DFDFDF;
+}
+
+.content-wrapper {
+    width: 80%;
+}
+
+.article-content {
+    text-indent: 2em;
+    line-height: 20px;
+}
+
+.title {
+    text-align: left;
+    font-size: 2.5em;
+}
+
+.comment-creation {
+    margin: 2em 0;
+    background: lightgrey;
+    width: 75%;
+    padding: 2em 1em;
+    border-radius: 15px;
+}
+
+.comment-box {
+    width: 50%;
+    background: linen;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 15px;
+}
+
+.comment-author, .byline {
+    font-weight: bolder;
+}
+
+.comment-date, .created-at {
+    font-style: italic;
+}
+
+.comment-content {
+    margin-top: .25em;
+    text-indent: 1em;
+}

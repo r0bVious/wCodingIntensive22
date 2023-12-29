@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#reservationSystem {
+    margin: 0 auto;
+    padding: 25px;
+    width: 80vw;
+    background: linen;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;;
+    align-items: center;
+    gap: 1em;
+
+    font-family: monospace;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.month, .day {
+    width: 2em;
+    height: 2em;
+    background: powderblue;
+}
+
+.day {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.timeblock {
+    width: 10em;
+    height: 3em;
+}
+
+.confirmForm {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter_container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50%;
+    gap: 1em;
+}
+
+.visible {
+    display: flex;
+}
+
+.partybutton {
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    background: #FDFDFD;
+    border: 2px solid black;
+}
