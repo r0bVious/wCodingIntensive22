@@ -10,28 +10,35 @@ function dbConnect() {
     return $db;
 }
 
-function checkReservationsMade($inDateTime) {
+function checkReservationsMade($inMonth, $inDay) {
     $db = dbConnect();
-    $checkSeatsLeft = $db -> prepare('SELECT * FROM restaurant-guests where guest-reservationtime = :inDateTime');
-    $checkSeatsLeft -> execute(array (
-        "inDateTime" => $inDateTime
+    $checkSeatsTaken = $db -> prepare('SELECT HOUR(`guest-reservation`), `guest-numberof` FROM `restaurant-guests` where MONTH(`guest-reservation`) = :inMonth AND DAY(`guest-reservation`) = :inDay');
+    $checkSeatsTaken -> execute(array (
+        ":inMonth" => $inMonth,
+        ":inDay" => $inDay
     ));
 
-    $madeReservations = $checkSeatsLeft -> fetchAll(PDO::FETCH_ASSOC);
-    $checkSeatsLeft -> closeCursor();
+    $madeReservations = $checkSeatsTaken -> fetchAll(PDO::FETCH_ASSOC);
     return $madeReservations;
 }
 
 //this comes from controller, processed and ready to smash into db
-function writeReservation($guestName, $partyNum, $guestContact, $guestEmail, $reservationTime) {
+function writeReservation($guestName, $partyNum, $guestContact, $guestEmail, $resvCode, $reservationTime) {
     $db = dbConnect();
-    $reservationInsert = $db -> prepare('INSERT INTO `restaurant-guests` (`guest-name`, `guest-numberof`, `guest-contact`, `guest-email`, `guest-reservation`, `guest-createdwhen`) VALUES (:guestName, :partyNum, :guestContact, :guestEmail, :guestReservationTime, NOW())');
-    $reservationInsert -> execute(array(
+    $reservationInsert = $db -> prepare('INSERT INTO `restaurant-guests` (`guest-name`, `guest-numberof`, `guest-contact`, `guest-email`, `guest-reservation`, `guest-reservation-code`, `guest-createdwhen`) VALUES (:guestName, :partyNum, :guestContact, :guestEmail, :guestReservationTime, :resvCode, NOW())');
+    $insertCheck = $reservationInsert -> execute(array(
         ":guestName" => $guestName,
         ":partyNum" => $partyNum,
         ":guestContact" => $guestContact,
         ":guestEmail" => $guestEmail,
+        ":resvCode" => $resvCode,
         ":guestReservationTime" => $reservationTime
     ));
-    $reservationInsert -> closeCursor();
+
+    if ($insertCheck) {
+        return true;
+    } else {
+        return false;
+    }
+    //this should be rewritten as an insert attempt with an ok/not okay return for controller
 }

@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,9 +23,11 @@
 <input type="hidden" name="partyNum" value="" id="form-partyNum" />
 <input type="text" name="guestContact" placeholder="Phone"/>
 <input type="text" name="guestEmail" placeholder="Email"/>
+<input type="hidden" name="resvCode" value="" id="resvCode"/>
 <input type="hidden" name="reservationTime" value="" id="reservationTime" />
 <input type="hidden" name="route" value="makeReservation" />
-<input type="submit">
+<!-- <input type="submit"> -->
+<button id="submitButton">Make Reservation</button>
 </form>
 
 <script src="reservesystem.js"></script>

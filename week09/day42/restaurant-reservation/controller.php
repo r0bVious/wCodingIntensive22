@@ -1,27 +1,44 @@
 <?php
 require("model.php");
 
-require("indexView.php");
+function checkSeatsRemaining($inData) {
+    $seatsAtHour = array(
+        11 => 20,
+        12 => 20,
+        13 => 20,
+        14 => 20,
+        15 => 20,
+        16 => 20,
+        17 => 20,
+        18 => 20,
+        19 => 20,
+        20 => 20,
+        21 => 20,
+        22 => 20,
+    );
 
-function checkSeatsRemaining($inDateTime) {
-    $madeReservations = checkReservationsMade($inDateTime);
-    $availableSeats = 20;
+    $inMonth = $inData[0];
+    $inDay = $inData[1];
+    
+    $madeReservations = checkReservationsMade($inMonth, $inDay);
 
     foreach ($madeReservations as $reservation) {
-        $availableSeats = $availableSeats - $reservation["guest-numberof"];
+        $seatsAtHour[$reservation["HOUR(`guest-reservation`)"]] = ($seatsAtHour[$reservation["HOUR(`guest-reservation`)"]] - $reservation["guest-numberof"]);
+        $seatsAtHour[$reservation["HOUR(`guest-reservation`)"] + 1] = ($seatsAtHour[$reservation["HOUR(`guest-reservation`)"]] - $reservation["guest-numberof"]);
     }
 
-    return $availableSeats;
+    return $seatsAtHour;
 }
 
-function makeReservation($guestName, $partyNum, $guestContact, $guestEmail, $reservationTime) { //process first and send to model
+function makeReservation($guestName, $partyNum, $guestContact, $guestEmail, $resvCode, $reservationTime) { //process first and send to model
 
-    if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $guestEmail)) {
+    if (filter_var($guestEmail, FILTER_VALIDATE_EMAIL)) {
         $checkedEmail = $guestEmail;
     }
     
     $reservation = json_decode($reservationTime);
     $reservation = "2024" . "-" . $reservation[0] . "-" . $reservation[1] . " " . $reservation[2] . ":00:00";
 
-    writeReservation($guestName, $partyNum, $guestContact, $checkedEmail, $reservation);
+    // $resvCode = substr(md5(rand()), 0, 6);
+    writeReservation($guestName, $partyNum, $guestContact, $checkedEmail, $resvCode, $reservation);
 }

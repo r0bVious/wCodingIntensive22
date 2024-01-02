@@ -1,0 +1,302 @@
+2023-12-29 14:14:56 index.php: 
+2023-12-29 15:07:54 index.php: /week09/day42/restaurant-reservation/ Body: 
+2023-12-29 15:08:02 index.php: /week09/day42/restaurant-reservation/index.php?route=checkExistingReservations Body: [8,14]
+2023-12-29 15:09:21 index.php: 1 Body: [8,2]
+2023-12-29 15:10:19 index.php: checkExistingReservations Body: [8,2]
+2023-12-29 15:13:10 index.php:  Body: 
+2023-12-29 15:13:16 index.php: checkExistingReservations Body: [6,14]
+2023-12-29 15:13:40 index.php: checkExistingReservations Body: [6,15]
+2023-12-29 15:15:21 index.php:  Body: 
+2023-12-29 15:15:27 index.php: checkExistingReservations Body: [7,16]
+2023-12-29 15:16:33 index.php: checkExistingReservations Body: [7,12]
+2023-12-29 15:16:58 index.php:  Body: 
+2023-12-29 15:17:03 index.php: checkExistingReservations Body: [7,16]
+2023-12-29 15:17:11 index.php: checkExistingReservations Body: [7,16]
+2023-12-29 15:17:52 index.php: checkExistingReservations Body: [7,15]
+2023-12-29 15:18:04 index.php: checkExistingReservations Body: [7,13]
+2023-12-29 15:18:14 index.php: checkExistingReservations Body: [7,12]
+2023-12-29 15:18:30 index.php: checkExistingReservations Body: [7,13]
+2023-12-29 15:18:58 index.php: checkExistingReservations Body: [7,16]
+2023-12-29 15:19:42 index.php:  Body: 
+2023-12-29 15:19:46 index.php: checkExistingReservations Body: [7,15]
+2023-12-29 15:23:39 index.php:  Body: 
+2023-12-29 15:23:43 index.php: checkExistingReservations Body: [7,16]
+2023-12-29 15:27:12 index.php:  Body: 
+2023-12-29 15:27:17 index.php: checkExistingReservations Body: [7,16]
+2023-12-29 15:28:44 index.php:  Body: 
+2023-12-29 15:28:49 index.php: checkExistingReservations Body: [6,15]
+2023-12-29 15:29:16 index.php: makeReservation Body: guestName=Hippo&partyNum=2&guestContact=28473724111&guestEmail=hippo%40yah.com&reservationTime=%5B6%2C15%2C17%5D&route=makeReservation
+2023-12-29 15:29:33 index.php:  Body: 
+2023-12-29 15:29:40 index.php: checkExistingReservations Body: [6,15]
+2023-12-30 11:38:47 index.php:  Body: 
+2023-12-30 11:39:54 index.php:  Body: 
+2023-12-30 11:39:55 index.php:  Body: 
+2023-12-30 11:42:37 index.php:  Body: 
+2023-12-30 11:42:50 index.php:  Body: 
+2023-12-30 11:43:13 index.php:  Body: 
+2023-12-30 11:43:28 index.php:  Body: 
+2023-12-30 11:43:43 index.php:  Body: 
+2023-12-30 11:44:18 index.php:  Body: 
+2023-12-30 11:45:01 index.php:  Body: 
+2023-12-30 11:45:37 index.php:  Body: 
+2023-12-30 11:46:02 index.php:  Body: 
+2023-12-30 11:46:13 index.php:  Body: 
+2023-12-30 11:46:44 index.php: checkExistingReservations Body: [8,14]
+2023-12-30 11:46:57 index.php:  Body: 
+2023-12-30 11:55:59 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 11:58:18 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 11:58:59 index.php:  Body: 
+2023-12-30 11:59:13 index.php:  Body: 
+2023-12-30 11:59:19 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:02:46 index.php:  Body: 
+2023-12-30 12:02:52 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:02:58 index.php:  Body: 
+2023-12-30 12:03:05 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:03:31 index.php:  Body: 
+2023-12-30 12:03:37 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:12:19 index.php:  Body: 
+2023-12-30 12:12:23 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:13:06 index.php:  Body: 
+2023-12-30 12:13:10 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:15:07 index.php:  Body: 
+2023-12-30 12:15:12 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:19:56 index.php:  Body: 
+2023-12-30 12:20:00 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:20:01 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:24:31 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:24:51 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:25:52 index.php:  Body: 
+2023-12-30 12:25:58 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:26:45 index.php:  Body: 
+2023-12-30 12:26:50 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:31:03 index.php:  Body: 
+2023-12-30 12:31:08 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:32:46 index.php:  Body: 
+2023-12-30 12:32:52 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:33:04 index.php:  Body: 
+2023-12-30 12:33:15 index.php:  Body: 
+2023-12-30 12:33:20 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:33:24 index.php:  Body: 
+2023-12-30 12:33:38 index.php:  Body: 
+2023-12-30 12:33:42 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:33:53 index.php:  Body: 
+2023-12-30 12:33:56 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:34:18 index.php:  Body: 
+2023-12-30 12:34:23 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:35:41 index.php:  Body: 
+2023-12-30 12:35:45 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:35:56 index.php:  Body: 
+2023-12-30 12:36:00 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:36:31 index.php:  Body: 
+2023-12-30 12:36:37 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:36:46 index.php:  Body: 
+2023-12-30 12:36:50 index.php:  Body: 
+2023-12-30 12:36:55 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:38:53 index.php:  Body: 
+2023-12-30 12:38:59 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:41:25 index.php:  Body: 
+2023-12-30 12:41:30 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:42:12 index.php:  Body: 
+2023-12-30 12:42:17 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:42:39 index.php:  Body: 
+2023-12-30 12:42:44 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:43:03 index.php:  Body: 
+2023-12-30 12:43:07 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:43:30 index.php:  Body: 
+2023-12-30 12:43:34 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:44:20 index.php:  Body: 
+2023-12-30 12:44:24 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:44:34 index.php:  Body: 
+2023-12-30 12:44:38 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:44:49 index.php:  Body: 
+2023-12-30 12:44:52 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:45:11 index.php:  Body: 
+2023-12-30 12:45:15 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:45:52 index.php:  Body: 
+2023-12-30 12:45:55 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:46:04 index.php:  Body: 
+2023-12-30 12:46:12 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:46:26 index.php:  Body: 
+2023-12-30 12:46:30 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:46:45 index.php:  Body: 
+2023-12-30 12:46:50 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:47:25 index.php:  Body: 
+2023-12-30 12:48:15 index.php:  Body: 
+2023-12-30 12:48:24 index.php:  Body: 
+2023-12-30 12:48:41 index.php:  Body: 
+2023-12-30 12:49:00 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:49:09 index.php:  Body: 
+2023-12-30 12:49:15 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:49:23 index.php:  Body: 
+2023-12-30 12:49:46 index.php:  Body: 
+2023-12-30 12:49:49 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:50:27 index.php:  Body: 
+2023-12-30 12:50:30 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:50:55 index.php:  Body: 
+2023-12-30 12:50:59 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:51:45 index.php:  Body: 
+2023-12-30 12:51:49 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:52:14 index.php:  Body: 
+2023-12-30 12:52:18 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:52:32 index.php:  Body: 
+2023-12-30 12:52:37 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:53:38 index.php:  Body: 
+2023-12-30 12:53:43 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:53:54 index.php:  Body: 
+2023-12-30 12:53:59 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:54:29 index.php:  Body: 
+2023-12-30 12:54:34 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:55:03 index.php:  Body: 
+2023-12-30 12:55:08 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 12:55:32 index.php:  Body: 
+2023-12-30 12:55:45 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 13:01:25 index.php:  Body: 
+2023-12-30 13:02:08 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 13:02:50 index.php: makeReservation Body: guestName=Minyoung&partyNum=6&guestContact=01010078773&guestEmail=Minyaaoong%40gmail.com&reservationTime=%5B8%2C7%2C20%5D&route=makeReservation
+2023-12-30 13:03:29 index.php:  Body: 
+2023-12-30 13:03:40 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 13:06:11 index.php:  Body: 
+2023-12-30 13:06:16 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 13:06:42 index.php:  Body: 
+2023-12-30 13:06:47 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 13:07:24 index.php:  Body: 
+2023-12-30 13:07:29 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 13:08:00 index.php:  Body: 
+2023-12-30 13:08:05 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 13:08:21 index.php:  Body: 
+2023-12-30 13:08:26 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 13:08:37 index.php:  Body: 
+2023-12-30 13:08:42 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 13:08:49 index.php:  Body: 
+2023-12-30 13:08:54 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 13:09:11 index.php:  Body: 
+2023-12-30 13:09:16 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 13:09:32 index.php:  Body: 
+2023-12-30 13:09:36 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 13:09:47 index.php:  Body: 
+2023-12-30 13:09:50 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 13:10:07 index.php:  Body: 
+2023-12-30 13:10:12 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 13:10:22 index.php: makeReservation Body: guestName=Minyoung&partyNum=7&guestContact=01010078773&guestEmail=Minyaaoong%40gmail.com&reservationTime=%5B8%2C7%2C14%5D&route=makeReservation
+2023-12-30 13:13:11 index.php: makeReservation Body: guestName=Minyoung&partyNum=7&guestContact=01010078773&guestEmail=Minyaaoong%40gmail.com&reservationTime=%5B8%2C7%2C14%5D&route=makeReservation
+2023-12-30 13:14:39 index.php:  Body: 
+2023-12-30 14:32:41 index.php:  Body: 
+2023-12-30 14:57:06 index.php: checkExistingReservations Body: [8,7]
+2023-12-30 14:57:33 index.php: makeReservation Body: guestName=BigMorningParty&partyNum=9&guestContact=01012345678&guestEmail=bigguy%40gmail.com&reservationTime=%5B8%2C7%2C11%5D&route=makeReservation
+2023-12-31 10:02:26 index.php:  Body: 
+2023-12-31 10:02:33 index.php: checkExistingReservations Body: [8,7]
+2023-12-31 10:03:06 index.php:  Body: 
+2023-12-31 10:04:01 index.php: checkExistingReservations Body: [8,7]
+2023-12-31 10:29:28 index.php:  Body: 
+2023-12-31 10:29:35 index.php: checkExistingReservations Body: [8,7]
+2023-12-31 10:30:14 index.php: makeReservation Body: guestName=Mr.+Guyman&partyNum=2&guestContact=01087773342&guestEmail=themanguy%40gmail.com&resvCode=%5B8%2C7%2C23%5D&reservationTime=%5B8%2C7%2C14%5D&route=makeReservation
+2023-12-31 10:30:51 index.php: checkExistingReservations Body: [8,7]
+2023-12-31 10:32:38 index.php:  Body: 
+2023-12-31 10:32:43 index.php: checkExistingReservations Body: [8,7]
+2023-12-31 10:33:11 index.php: makeReservation Body: guestName=Bobby+McFerrin&partyNum=2&guestContact=01028747335&guestEmail=worryandbemad%40gmail.com&resvCode=&reservationTime=%5B8%2C7%2C13%5D&route=makeReservation
+2023-12-31 10:35:05 index.php:  Body: 
+2023-12-31 10:35:10 index.php: checkExistingReservations Body: [8,7]
+2023-12-31 10:36:08 index.php: makeReservation Body: guestName=Steve+Irwin&partyNum=2&guestContact=01009870987&guestEmail=whatabeaut%40gmail.com&resvCode=&reservationTime=%5B8%2C7%2C12%5D&route=makeReservation
+2023-12-31 10:36:31 index.php: makeReservation Body: guestName=Steve+Irwin&partyNum=2&guestContact=01009870987&guestEmail=whatabeaut%40gmail.com&resvCode=&reservationTime=%5B8%2C7%2C12%5D&route=makeReservation
+2023-12-31 10:36:38 index.php: checkExistingReservations Body: [8,7]
+2023-12-31 10:37:04 index.php: makeReservation Body: guestName=Cass+Master&partyNum=2&guestContact=01092475532&guestEmail=cassislyfe%40gmail.com&resvCode=&reservationTime=%5B8%2C7%2C14%5D&route=makeReservation
+2023-12-31 10:40:34 index.php:  Body: 
+2023-12-31 10:40:39 index.php: checkExistingReservations Body: [8,7]
+2023-12-31 10:40:53 index.php: makeReservation Body: guestName=TestyMan&partyNum=2&guestContact=01074689837&guestEmail=testyboi%40gmail.com&resvCode=&reservationTime=%5B8%2C7%2C21%5D&route=makeReservation
+2023-12-31 10:42:48 index.php:  Body: 
+2023-12-31 10:42:55 index.php: checkExistingReservations Body: [8,7]
+2023-12-31 10:43:14 index.php: makeReservation Body: guestName=DJ+Khalid&partyNum=3&guestContact=01047832223&guestEmail=anothaone%40gmail.com&resvCode=&reservationTime=%5B8%2C7%2C15%5D&route=makeReservation
+2023-12-31 10:46:14 index.php:  Body: 
+2023-12-31 10:46:18 index.php: checkExistingReservations Body: [8,7]
+2023-12-31 10:46:30 index.php: makeReservation Body: guestName=Ihatethis&partyNum=2&guestContact=01094872273&guestEmail=why%40gmail.com&resvCode=&reservationTime=%5B8%2C7%2C14%5D&route=makeReservation
+2024-01-01 14:28:11 index.php:  Body: 
+2024-01-01 14:28:18 index.php: checkExistingReservations Body: [8,7]
+2024-01-01 14:28:34 index.php: makeReservation Body: guestName=LastTest&partyNum=4&guestContact=01076567448&guestEmail=lesttast%40gmail.com&resvCode=&reservationTime=%5B8%2C7%2C14%5D&route=makeReservation
+2024-01-01 14:29:12 index.php:  Body: 
+2024-01-01 14:30:02 index.php:  Body: 
+2024-01-01 14:31:22 index.php:  Body: 
+2024-01-01 14:40:55 index.php:  Body: 
+2024-01-01 14:41:24 index.php:  Body: 
+2024-01-01 14:41:51 index.php:  Body: 
+2024-01-01 14:42:34 index.php:  Body: 
+2024-01-01 14:42:40 index.php:  Body: 
+2024-01-01 14:43:46 index.php:  Body: 
+2024-01-01 14:44:05 index.php:  Body: 
+2024-01-01 14:44:10 index.php:  Body: 
+2024-01-01 14:44:23 index.php:  Body: 
+2024-01-01 14:44:36 index.php:  Body: 
+2024-01-01 14:44:40 index.php:  Body: 
+2024-01-01 14:44:45 index.php:  Body: 
+2024-01-01 14:46:32 index.php:  Body: 
+2024-01-01 14:46:37 index.php:  Body: 
+2024-01-01 14:46:59 index.php:  Body: 
+2024-01-01 14:47:06 index.php:  Body: 
+2024-01-01 14:47:22 index.php:  Body: 
+2024-01-01 14:48:34 index.php:  Body: 
+2024-01-01 14:48:46 index.php:  Body: 
+2024-01-01 14:48:53 index.php:  Body: 
+2024-01-01 14:49:12 index.php:  Body: 
+2024-01-01 14:49:19 index.php:  Body: 
+2024-01-01 14:49:26 index.php:  Body: 
+2024-01-01 14:49:37 index.php:  Body: 
+2024-01-01 14:50:14 index.php:  Body: 
+2024-01-01 14:50:18 index.php:  Body: 
+2024-01-01 14:50:43 index.php:  Body: 
+2024-01-01 14:51:02 index.php:  Body: 
+2024-01-01 14:51:09 index.php:  Body: 
+2024-01-01 14:51:30 index.php:  Body: 
+2024-01-01 14:52:03 index.php:  Body: 
+2024-01-01 14:52:25 index.php:  Body: 
+2024-01-01 14:52:36 index.php:  Body: 
+2024-01-01 14:52:40 index.php:  Body: 
+2024-01-01 14:53:02 index.php:  Body: 
+2024-01-01 14:53:20 index.php:  Body: 
+2024-01-01 14:53:33 index.php:  Body: 
+2024-01-01 14:53:45 index.php:  Body: 
+2024-01-01 14:53:53 index.php:  Body: 
+2024-01-01 14:54:02 index.php:  Body: 
+2024-01-01 14:54:08 index.php:  Body: 
+2024-01-01 14:54:49 index.php:  Body: 
+2024-01-01 14:54:49 index.php:  Body: 
+2024-01-01 14:54:57 index.php:  Body: 
+2024-01-01 14:55:10 index.php:  Body: 
+2024-01-01 14:55:18 index.php:  Body: 
+2024-01-01 14:55:41 index.php:  Body: 
+2024-01-01 14:55:54 index.php:  Body: 
+2024-01-01 14:56:03 index.php:  Body: 
+2024-01-01 14:56:40 index.php:  Body: 
+2024-01-01 14:56:51 index.php:  Body: 
+2024-01-01 14:57:23 index.php:  Body: 
+2024-01-01 14:57:51 index.php:  Body: 
+2024-01-01 14:58:06 index.php:  Body: 
+2024-01-01 14:58:21 index.php:  Body: 
+2024-01-01 14:58:29 index.php:  Body: 
+2024-01-01 14:58:49 index.php:  Body: 
+2024-01-01 14:59:31 index.php:  Body: 
+2024-01-01 14:59:47 index.php:  Body: 
+2024-01-01 15:00:05 index.php:  Body: 
+2024-01-01 15:00:17 index.php:  Body: 
+2024-01-01 15:01:00 index.php:  Body: 
+2024-01-01 15:01:11 index.php:  Body: 
+2024-01-01 15:01:27 index.php:  Body: 
+2024-01-01 15:01:34 index.php:  Body: 
+2024-01-01 15:01:42 index.php:  Body: 
+2024-01-01 15:01:53 index.php:  Body: 
+2024-01-01 15:02:07 index.php:  Body: 
+2024-01-01 15:02:17 index.php:  Body: 
+2024-01-01 15:02:38 index.php: checkExistingReservations Body: [8,7]
+2024-01-01 15:03:21 index.php:  Body: 
+2024-01-01 15:03:25 index.php: checkExistingReservations Body: [8,7]
+2024-01-02 09:48:55 index.php:  Body: 
+2024-01-02 09:51:20 index.php: checkExistingReservations Body: [8,7]
+2024-01-02 09:51:41 index.php:  Body: 
+2024-01-02 09:52:46 index.php: checkExistingReservations Body: [8,7]
+2024-01-02 09:53:03 index.php:  Body: 
+2024-01-02 09:53:09 index.php: checkExistingReservations Body: [8,7]
+2024-01-02 09:53:23 index.php: makeReservation Body: guestName=wonky&partyNum=2&guestContact=01293884838&guestEmail=urmom%40gmail.com&resvCode=&reservationTime=%5B8%2C7%2C20%5D&route=makeReservation
+2024-01-02 09:53:33 index.php:  Body: 
+2024-01-02 09:53:45 index.php: checkExistingReservations Body: [4,6]
+2024-01-02 09:53:52 index.php:  Body: 
+2024-01-02 10:02:42 index.php:  Body: 
+2024-01-02 10:02:46 index.php: checkExistingReservations Body: [8,7]
+2024-01-02 10:02:56 index.php: makeReservation Body: guestName=yesyalk&partyNum=2&guestContact=9872938749&guestEmail=yesy%40gmia.com&resvCode=&reservationTime=%5B8%2C7%2C13%5D&route=makeReservation
